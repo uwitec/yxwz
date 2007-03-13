@@ -15,11 +15,4 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        
-        Session["userid"] = 1;
-        Server.Transfer("~/user/AddJL.aspx");
-    }
 }
