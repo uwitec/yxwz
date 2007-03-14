@@ -13,10 +13,10 @@ public partial class User_JLManage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["userPower"] == "Admin")
-        {
-            JL.SelectCommand = "SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 ORDER BY id DESC";
-        }
+        //if (Session["userPower"] == "Admin")
+        //{
+        //    JL.SelectCommand = "SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 ORDER BY id DESC";
+        //}
     }
     protected void Button1_Click(object sender, EventArgs e)
     {

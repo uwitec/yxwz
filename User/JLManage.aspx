@@ -1,18 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLManage.aspx.cs" Inherits="User_JLManage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLManage.aspx.cs" Inherits="User_JLManage"  MasterPageFile="~/yxwz.master"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-<script type="text/jscript">
-    function confirmDel()
-    {
-        return confirm("真的要删除？");
-    }
-</script>
-    <title>无标题页</title>
-</head>
-<body>
+<asp:Content ContentPlaceHolderID="main" runat=server>
     <form id="form1" runat="server">
     <div>
         <a href="JLAdd.aspx">添加</a><br />
@@ -86,24 +74,18 @@
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 WHERE (领取用户id = @userid) ORDER BY id DESC"
-            UpdateCommand="UPDATE [领货记录] SET [时间] = @时间, [领取用户id] = @领取用户id, [材料id] = @材料id, [领取数量] = @领取数量 WHERE [id] = @original_id">
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 ORDER BY id DESC"
+            UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = @领取数量 WHERE [id] = @original_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
             </DeleteParameters>
             <UpdateParameters>
-                <asp:Parameter Name="时间" Type="DateTime" />
-                <asp:Parameter Name="领取用户id" Type="Int32" />
                 <asp:Parameter Name="材料id" Type="Int32" />
                 <asp:Parameter Name="领取数量" Type="Int32" />
                 <asp:Parameter Name="original_id" Type="Int32" />
             </UpdateParameters>
-            <SelectParameters>
-                <asp:SessionParameter Name="userid" SessionField="userid" />
-            </SelectParameters>
         </asp:SqlDataSource>
     
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

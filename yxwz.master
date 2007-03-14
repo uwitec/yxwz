@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="yxwz.master.cs" Inherits="yxwz" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>无标题页</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    营销物资配送系统</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">
+                    <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
+                        <ParentNodeStyle Font-Bold="False" />
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                            VerticalPadding="0px" />
+                        <Nodes>
+                            <asp:TreeNode Text="物资" Value="物资">
+                                <asp:TreeNode Text="材料领取使用" Value="材料领取使用" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="材料使用记录" Value="材料使用记录" NavigateUrl="~/User/JLManage.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="报表" Value="报表">
+                                <asp:TreeNode Text="月度报表" Value="月度报表" NavigateUrl="~/Admin/JLHZ.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="用户管理" Value="用户管理">
+                                <asp:TreeNode Text="增加用户" Value="增加用户" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="用户管理" Value="用户管理" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                </td>
+                <td>
+        <asp:contentplaceholder id="main" runat="server">
+        </asp:contentplaceholder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
