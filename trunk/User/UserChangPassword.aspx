@@ -2,7 +2,6 @@
 
 
 <asp:Content ContentPlaceHolderID="main" runat="server">
-    <form id="form1" runat="server">
     <div>
         <asp:ChangePassword ID="ChangePassword1" runat="server" OnChangingPassword="ChangePassword1_ChangingPassword">
         </asp:ChangePassword>
@@ -15,5 +14,4 @@
         </asp:SqlDataSource>
     
     </div>
-    </form>
 </asp:Content>
