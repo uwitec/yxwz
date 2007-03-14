@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLManage.aspx.cs" Inherits="User_JLManage"  MasterPageFile="~/yxwz.master"%>
 
 <asp:Content ContentPlaceHolderID="main" runat=server>
-    <form id="form1" runat="server">
     <div>
         <a href="JLAdd.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
@@ -87,5 +86,4 @@
         </asp:SqlDataSource>
     
     </div>
-    </form>
 </asp:Content>

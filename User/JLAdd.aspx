@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLAdd.aspx.cs" Inherits="Admin_AddJL"  MasterPageFile="~/yxwz.master"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <form id="form1" runat="server">
     <div>
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
             DefaultMode="Insert" Width="256px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
@@ -70,5 +69,4 @@
         &nbsp;
     
     </div>
-    </form>
 </asp:Content>
