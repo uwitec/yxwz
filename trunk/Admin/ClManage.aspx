@@ -1,18 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ClManage.aspx.cs" Inherits="Admin_ClMagage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ClManage.aspx.cs" Inherits="Admin_ClMagage"  MasterPageFile="~/yxwz.master"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-<script language=javascript>
+<script language=javascript type="text/jscript">
     function confirmDel()
     {
         return confirm("真的要删除？");
     }
 </script>
-    <title>无标题页</title>
-</head>
-<body>
     <form id="form1" runat="server">
     <div>
         <a href="CLAdd.aspx">添加</a><br />
@@ -76,5 +71,4 @@
     
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

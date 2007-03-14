@@ -1,12 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CLAdd.aspx.cs" Inherits="Admin_AddCLPZ" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CLAdd.aspx.cs" Inherits="Admin_AddCLPZ"  MasterPageFile="~/yxwz.master"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>无标题页</title>
-</head>
-<body>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
     <form id="form1" runat="server">
     <div>
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="id"
@@ -63,5 +60,4 @@
     
     </div>
     </form>
-</body>
-</html>
+</asp:Content>
