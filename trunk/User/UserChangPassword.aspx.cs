@@ -11,12 +11,4 @@ using System.Web.UI.HtmlControls;
 
 public partial class Admin_ChangPassword : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-    protected void ChangePassword1_ChangingPassword(object sender, LoginCancelEventArgs e)
-    {
-        user.Insert();
-    }
 }
