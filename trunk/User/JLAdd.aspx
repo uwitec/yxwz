@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLAdd.aspx.cs" Inherits="Admin_AddJL"  MasterPageFile="~/yxwz.master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLAdd.aspx.cs" Inherits="Admin_AddJL"  MasterPageFile="~/yxwz.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
     <div>
@@ -15,7 +15,9 @@
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
                                 SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
-                        </td>
+                            <br />
+                            <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
+                                Visible="False"></asp:Label></td>
                     </tr>
                     <tr>
                         <td style="width: 148px">
@@ -33,7 +35,7 @@
                         <td style="width: 148px">
                             数量</td>
                         <td>
-                            <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量") %>'></asp:TextBox>
+                            <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量") %>' AutoCompleteType="Disabled"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtSL"
                                 ErrorMessage="数字格式不正确" ValidationExpression="-?\d+" Display="None"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtSL"

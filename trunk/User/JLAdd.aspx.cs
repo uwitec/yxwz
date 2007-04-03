@@ -26,10 +26,11 @@ public partial class Admin_AddJL : System.Web.UI.Page
     }
     protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
     {
-        Server.Transfer("JLManage.aspx");
+        Server.Transfer("~/User/JLManage.aspx");
     }
     protected void psjl_Inserting(object sender, SqlDataSourceCommandEventArgs e)
     {
-        (e.Command.Parameters["@领取用户id"] as SqlParameter).SqlDbType = SqlDbType.UniqueIdentifier;
+        //如果加入下边的这句，就会出现string到guid转换错误
+        //(e.Command.Parameters["@领取用户id"] as SqlParameter).SqlDbType = SqlDbType.UniqueIdentifier;
     }
 }

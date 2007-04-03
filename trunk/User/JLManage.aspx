@@ -1,10 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLManage.aspx.cs" Inherits="User_JLManage"  MasterPageFile="~/yxwz.master"%>
 
 <asp:Content ContentPlaceHolderID="main" runat=server>
+  <script language=javascript type="text/jscript">
+    function confirmDel()
+    {
+        return confirm("真的要删除？");
+    }
+</script>
+  
     <div>
         <a href="JLAdd.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
-            DataSourceID="JL">
+            DataSourceID="JL" AllowPaging="True">
             <Columns>
                 <asp:TemplateField ShowHeader="False">
                     <EditItemTemplate>
