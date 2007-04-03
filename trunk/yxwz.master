@@ -23,11 +23,13 @@
                             VerticalPadding="0px" />
                         <Nodes>
                             <asp:TreeNode Text="物资使用" Value="物资使用">
-                                <asp:TreeNode Text="材料领取使用" Value="材料领取使用" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="材料使用记录" Value="材料使用记录" NavigateUrl="~/User/JLManage.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="初始物资录入" Value="初始物资录入"></asp:TreeNode>
+                                <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLManage.aspx"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表">
-                                <asp:TreeNode Text="月度报表" Value="月度报表" NavigateUrl="~/Admin/JLHZ.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/Admin/JLHZ.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="明细报表" Value="明细报表"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="物资品种" Value="物资品种">
                                 <asp:TreeNode NavigateUrl="~/Admin/CLAdd.aspx" Text="增加材料品种" Value="增加材料品种"></asp:TreeNode>
@@ -36,6 +38,7 @@
                             <asp:TreeNode Text="用户管理" Value="用户管理">
                                 <asp:TreeNode Text="增加用户" Value="增加用户" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
                                 <asp:TreeNode Text="用户管理" Value="用户管理" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="修改当前用户密码" Value="修改当前用户密码"></asp:TreeNode>
                             </asp:TreeNode>
                         </Nodes>
                         <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
