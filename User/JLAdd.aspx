@@ -10,11 +10,11 @@
                         <td>
                         </td>
                         <td >
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="clmc" DataTextField="用户名称"
-                                DataValueField="id" SelectedValue='<%# Bind("领取用户id", "{0}") %>'>
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
+                                DataValueField="UserId" SelectedValue='<%# Bind("领取用户id", "{0}") %>'>
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="clmc" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-                                SelectCommand="SELECT [id], [用户名称] FROM [用户]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
+                                SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
                         </td>
                     </tr>
                     <tr>
