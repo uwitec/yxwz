@@ -7,11 +7,11 @@
             <InsertItemTemplate>
                 <table>
                     <tr>
-                        <td>
+                        <td style="height: 68px">
                         </td>
-                        <td >
+                        <td style="height: 68px" >
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
-                                DataValueField="UserId" SelectedValue='<%# Bind("领取用户id", "{0}") %>'>
+                                DataValueField="UserId" SelectedValue='<%# Bind("领取用户id") %>'>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
                                 SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
@@ -22,7 +22,7 @@
                             物资名称：</td>
                         <td>
                             <asp:DropDownList ID="DrpWZMC" runat="server" SelectedValue='<%# Bind("材料id") %>' DataSourceID="WZ" DataTextField="名称" DataValueField="id">
-                            </asp:DropDownList>
+                            </asp:DropDownList>&nbsp;
         <asp:SqlDataSource ID="WZ" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             SelectCommand="SELECT id, 材料名称 + 型号 AS 名称 FROM 材料价格"></asp:SqlDataSource>
     
@@ -33,7 +33,7 @@
                         <td style="width: 148px">
                             数量</td>
                         <td>
-                            <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量", "{0}") %>'></asp:TextBox>
+                            <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量") %>'></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtSL"
                                 ErrorMessage="数字格式不正确" ValidationExpression="-?\d+" Display="None"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtSL"
@@ -58,12 +58,12 @@
         </asp:FormView>
         <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
             ConnectionString="<%$ ConnectionStrings:wzps %>"
-            InsertCommand="INSERT INTO [领货记录] ([领取用户id], [材料id], [领取数量]) VALUES (@领取用户id, @材料id, @领取数量)"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [领货记录]">
+            InsertCommand="INSERT INTO 领货记录(领取用户id, 领取数量, 材料id, 领取时候单价) SELECT @领取用户id AS 领取用户id, @领取数量 AS 领取数量, id, 价格 FROM 材料价格 WHERE (id = @材料id)"
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [领货记录]" OnInserting="psjl_Inserting">
             <InsertParameters>
-                <asp:Parameter Name="领取用户id" Type="Int32" />
-                <asp:Parameter Name="材料id" Type="Int32" />
-                <asp:Parameter Name="领取数量" Type="Int32" />
+                <asp:Parameter Name="领取用户id" />
+                <asp:Parameter Name="领取数量" />
+                <asp:Parameter Name="材料id" />
             </InsertParameters>
         </asp:SqlDataSource>
         &nbsp;
