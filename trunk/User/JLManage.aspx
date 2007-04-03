@@ -29,11 +29,11 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="领取用户id" SortExpression="领取用户id">
-                    <EditItemTemplate><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="User" DataTextField="用户名称"
-                            DataValueField="id" Enabled="False" SelectedValue='<%# Bind("领取用户id") %>'>
+                    <EditItemTemplate><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="User" DataTextField="UserName"
+                            DataValueField="UserId" Enabled="False" SelectedValue='<%# Bind("领取用户id") %>'>
                     </asp:DropDownList>
-                        <asp:SqlDataSource ID="User" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-                            SelectCommand="SELECT [id], [用户名称] FROM [用户]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="User" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
+                            SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="User" DataTextField="UserName"
