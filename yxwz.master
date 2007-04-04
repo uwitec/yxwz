@@ -11,12 +11,20 @@
     <div>
         <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
             <tr>
-                <td colspan="2" style="text-align: center; height: 88px;">
-                    营销物资配送系统</td>
+                <td colspan="2" style="text-align: center; height: 84px;">
+                    <span style="font-size: 36pt; font-family: 黑体">
+                    营销物资配送系统</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 18px; text-align: right">
+                    <asp:LoginName ID="LoginName1" runat="server" ForeColor="#0000C0" FormatString="已登录为：{0}" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
+                    &nbsp;
+                </td>
             </tr>
             <tr>
                 <td style="width: 200px">
-                    <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
+                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
                         <ParentNodeStyle Font-Bold="False" />
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                         <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
@@ -48,6 +56,7 @@
                         <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
                             NodeSpacing="0px" VerticalPadding="0px" />
                     </asp:TreeView>
+                    &nbsp;
                 </td>
                 <td>
         <asp:contentplaceholder id="main" runat="server">
