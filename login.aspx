@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/User/JLManage.aspx" DisplayRememberMe="False">
+        <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/User/JLADD.aspx" DisplayRememberMe="False">
         </asp:Login>
         &nbsp;</div>
     </form>
