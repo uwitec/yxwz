@@ -6,7 +6,7 @@
             <InsertItemTemplate>
                 <table>
                     <tr>
-                        <td style="height: 68px">
+                        <td style="height: 68px; width: 148px;">
                         </td>
                         <td style="height: 68px" >
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
@@ -29,6 +29,30 @@
     
     </td>
                         
+                    </tr>
+                    <tr>
+                        <td style="width: 148px">
+                            发料人：</td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("发料人") %>'></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 148px">
+                            用途：</td>
+                        <td>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("用途") %>'></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 148px">
+                            领用人：</td>
+                        <td>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("领用人") %>'></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 148px">
+                            备注：</td>
+                        <td>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("备注") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td style="width: 148px">
@@ -59,12 +83,16 @@
         </asp:FormView>
         <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
             ConnectionString="<%$ ConnectionStrings:wzps %>"
-            InsertCommand="INSERT INTO 领货记录(领取用户id, 领取数量, 材料id, 领取时候单价) SELECT @领取用户id AS 领取用户id, @领取数量 AS 领取数量, id, 价格 FROM 材料价格 WHERE (id = @材料id)"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [领货记录]" OnInserting="psjl_Inserting">
+            InsertCommand="INSERT INTO 领货记录(领取用户id, 领取数量, 材料id, 领取时候单价, 发料人, 用途, 领用人, 备注) SELECT @领取用户id AS 领取用户id, 0 - @领取数量 AS 领取数量, id AS 材料id, 价格 AS 领取时候单价, @发料人 AS 发料人, @用途 AS 用途, @领用人 AS 领用人, @备注 AS 备注 FROM 材料价格 WHERE (id = @材料id)"
+            OldValuesParameterFormatString="original_{0}" OnInserting="psjl_Inserting">
             <InsertParameters>
                 <asp:Parameter Name="领取用户id" />
                 <asp:Parameter Name="领取数量" />
                 <asp:Parameter Name="材料id" />
+                <asp:Parameter Name="发料人" />
+                <asp:Parameter Name="用途" />
+                <asp:Parameter Name="领用人" />
+                <asp:Parameter Name="备注" />
             </InsertParameters>
         </asp:SqlDataSource>
         &nbsp;
