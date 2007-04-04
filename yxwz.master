@@ -25,7 +25,9 @@
                             <asp:TreeNode Text="物资使用" Value="物资使用">
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入"></asp:TreeNode>
                                 <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLManage.aspx"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/User/JLAddManage.aspx" Text="入库记录" Value="入库记录"></asp:TreeNode>
+                                <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLDel.aspx"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/User/JLDelManage.aspx" Text="使用记录" Value="使用记录"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表">
                                 <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/Admin/JLHZ.aspx"></asp:TreeNode>

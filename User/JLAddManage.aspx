@@ -76,12 +76,13 @@
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("领取数量") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:BoundField DataField="领用人" HeaderText="领用人" SortExpression="领用人" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 ORDER BY id DESC"
-            UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = @领取数量 WHERE [id] = @original_id">
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户id, 材料id, 领取数量, 领用人 FROM 领货记录 WHERE (领取数量 > 0) ORDER BY id DESC"
+            UpdateCommand="UPDATE 领货记录 SET 材料id = @材料id, 领取数量 = @领取数量, 领用人 = @领用人 WHERE (id = @original_id)">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
             </DeleteParameters>
@@ -89,6 +90,7 @@
                 <asp:Parameter Name="材料id" Type="Int32" />
                 <asp:Parameter Name="领取数量" Type="Int32" />
                 <asp:Parameter Name="original_id" Type="Int32" />
+                <asp:Parameter Name="领用人" />
             </UpdateParameters>
         </asp:SqlDataSource>
     
