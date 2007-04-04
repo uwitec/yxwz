@@ -11,10 +11,10 @@
                         </td>
                         <td style="height: 68px" >
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
-                                DataValueField="UserId" SelectedValue='<%# Bind("领取用户id") %>'>
+                                DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                                SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
+                                SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]" OnLoad="users_Load"></asp:SqlDataSource>
                             <br />
                             <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                                 Visible="False"></asp:Label></td>
@@ -66,11 +66,12 @@
         </asp:FormView>
         <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
             ConnectionString="<%$ ConnectionStrings:wzps %>"
-            InsertCommand="INSERT INTO 领货记录(领取用户id, 领取数量, 材料id, 领取时候单价, 领用人) SELECT @领取用户id AS 领取用户id, @领取数量 AS 领取数量, id, 价格, @领用人 FROM 材料价格 WHERE (id = @材料id)"
+            InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 领用人) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, @领用人 AS Expr1 FROM 材料价格 WHERE (id = @材料id)"
             OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [领货记录]" OnInserting="psjl_Inserting">
             <InsertParameters>
-                <asp:Parameter Name="领取用户id" />
+                <asp:Parameter Name="领取用户" />
                 <asp:Parameter Name="领取数量" />
+                <asp:Parameter Name="领用人" />
                 <asp:Parameter Name="材料id" />
             </InsertParameters>
         </asp:SqlDataSource>
