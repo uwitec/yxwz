@@ -34,21 +34,7 @@
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("时间", "{0:D}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="领取用户id" SortExpression="领取用户id">
-                    <EditItemTemplate><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="User" DataTextField="UserName"
-                            DataValueField="UserId" Enabled="False" SelectedValue='<%# Bind("领取用户id") %>'>
-                    </asp:DropDownList>
-                        <asp:SqlDataSource ID="User" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                            SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="User" DataTextField="UserName"
-                            DataValueField="UserId" Enabled="False" SelectedValue='<%# Bind("领取用户id") %>'>
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="User" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                            SelectCommand="SELECT [UserId], [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:BoundField DataField="领取用户" HeaderText="领取用户" ReadOnly="True" SortExpression="领取用户" />
                 <asp:TemplateField HeaderText="材料id" SortExpression="材料id">
                     <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CL" DataTextField="材料"
@@ -83,7 +69,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户id, 材料id, 0 - 领取数量 AS 领取数量, 用途, 领用人, 发料人, 备注 FROM 领货记录 WHERE (0 - 领取数量 > 0) ORDER BY id DESC"
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户, 材料id, 0 - 领取数量 AS 领取数量, 用途, 领用人, 发料人, 备注 FROM 领货记录 WHERE (0 - 领取数量 > 0) ORDER BY id DESC"
             UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = 0 - @领取数量 WHERE [id] = @original_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />

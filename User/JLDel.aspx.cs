@@ -32,4 +32,11 @@ public partial class User_JLDel : System.Web.UI.Page
         //如果加入下边的这句，就会出现string到guid转换错误
         //(e.Command.Parameters["@领取用户id"] as SqlParameter).SqlDbType = SqlDbType.UniqueIdentifier;
     }
+    protected void users_Load(object sender, EventArgs e)
+    {
+
+        if (!User.IsInRole("营销部管理员"))
+            (sender as SqlDataSource).FilterExpression = "UserName = '" + Membership.GetUser().UserName + "'";
+
+    }
 }

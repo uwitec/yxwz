@@ -18,15 +18,15 @@ public class MembershipHelp
         return Membership.GetAllUsers();
     }
 
-    public static void SetUserPassword(string userName, string newPassword)
+    public static void SetUserPassword(string UserName, string newPassword)
     {
-        MembershipUser user = Membership.GetUser(userName);
+        MembershipUser user = Membership.GetUser(UserName);
         string tempPassword = user.ResetPassword();
         user.ChangePassword(tempPassword, newPassword);
     }
 
-    public static void DelUser(string userName)
+    public static void DelUser(string UserName)
     {
-        Membership.DeleteUser(userName);
+        Membership.DeleteUser(UserName);
     }
 }
