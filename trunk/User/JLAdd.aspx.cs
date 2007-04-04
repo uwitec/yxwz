@@ -26,7 +26,7 @@ public partial class Admin_AddJL : System.Web.UI.Page
     }
     protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
     {
-        Server.Transfer("~/User/JLManage.aspx");
+        Server.Transfer("~/User/JLADDManage.aspx");
     }
     protected void psjl_Inserting(object sender, SqlDataSourceCommandEventArgs e)
     {
