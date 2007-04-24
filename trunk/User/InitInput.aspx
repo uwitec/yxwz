@@ -43,7 +43,7 @@
                 <tr>
                     <td colspan="2" style="text-align: center">
                         &nbsp; &nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True"
-                            CommandName="Insert" Text="保存"></asp:LinkButton>
+                            CommandName="Insert" Text="添加"></asp:LinkButton>
                         &nbsp; &nbsp;
                         <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="取消"></asp:LinkButton>
@@ -61,17 +61,21 @@
             <asp:BoundField DataField="材料名称" HeaderText="材料名称" SortExpression="材料名称" />
             <asp:BoundField DataField="型号" HeaderText="型号" SortExpression="型号" />
             <asp:BoundField DataField="领取数量" HeaderText="领取数量" SortExpression="领取数量" />
+            <asp:CommandField ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
         ConnectionString="<%$ ConnectionStrings:wzps %>" InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 领用人) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, '仓库初始化录入' AS Expr1 FROM 材料价格 WHERE (id = @材料id)"
         OldValuesParameterFormatString="original_{0}" OnInserting="psjl_Inserting" OnLoad="psjl_Load"
-        SelectCommand="SELECT 领货记录.领取用户, 领货记录.领取数量, 材料价格.材料名称, 材料价格.型号, 领货记录.id FROM 领货记录 INNER JOIN 材料价格 ON 领货记录.材料id = 材料价格.id">
+        SelectCommand="SELECT 领货记录.领取用户, 领货记录.领取数量, 材料价格.材料名称, 材料价格.型号, 领货记录.id FROM 领货记录 INNER JOIN 材料价格 ON 领货记录.材料id = 材料价格.id" DeleteCommand="DELETE FROM 领货记录 WHERE (id = @original_id)">
         <InsertParameters>
             <asp:Parameter Name="领取用户" />
             <asp:Parameter Name="领取数量" />
             <asp:Parameter Name="材料id" />
         </InsertParameters>
+        <DeleteParameters>
+            <asp:Parameter Name="id" />
+        </DeleteParameters>
     </asp:SqlDataSource>
 </asp:Content>
 
