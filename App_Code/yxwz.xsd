@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="yxwz" targetNamespace="http://tempuri.org/yxwz.xsd" xmlns:mstns="http://tempuri.org/yxwz.xsd" xmlns="http://tempuri.org/yxwz.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="wzps" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="wzps (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.wzps.ConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JLTableAdapter" GeneratorDataComponentClassName="JLTableAdapter" Name="JL" UserDataComponentName="JLTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wzps (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT 领货记录.时间, 领货记录.领取用户, 材料价格.材料名称, 材料价格.型号, 领货记录.领取数量 FROM 材料价格 INNER JOIN 领货记录 ON 材料价格.id = 领货记录.材料id</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="时间" DataSetColumn="时间" />
+              <Mapping SourceColumn="领取用户" DataSetColumn="领取用户" />
+              <Mapping SourceColumn="材料名称" DataSetColumn="材料名称" />
+              <Mapping SourceColumn="型号" DataSetColumn="型号" />
+              <Mapping SourceColumn="领取数量" DataSetColumn="领取数量" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="yxwz" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="yxwz" msprop:Generator_DataSetName="yxwz">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JL" msprop:Generator_UserTableName="JL" msprop:Generator_RowDeletedName="JLRowDeleted" msprop:Generator_RowChangedName="JLRowChanged" msprop:Generator_RowClassName="JLRow" msprop:Generator_RowChangingName="JLRowChanging" msprop:Generator_RowEvArgName="JLRowChangeEvent" msprop:Generator_RowEvHandlerName="JLRowChangeEventHandler" msprop:Generator_TableClassName="JLDataTable" msprop:Generator_TableVarName="tableJL" msprop:Generator_RowDeletingName="JLRowDeleting" msprop:Generator_TablePropName="JL">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="时间" msprop:Generator_UserColumnName="时间" msprop:Generator_ColumnPropNameInRow="时间" msprop:Generator_ColumnVarNameInTable="column时间" msprop:Generator_ColumnPropNameInTable="时间Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="领取用户" msprop:Generator_UserColumnName="领取用户" msprop:Generator_ColumnPropNameInRow="领取用户" msprop:Generator_ColumnVarNameInTable="column领取用户" msprop:Generator_ColumnPropNameInTable="领取用户Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="材料名称" msprop:Generator_UserColumnName="材料名称" msprop:Generator_ColumnPropNameInRow="材料名称" msprop:Generator_ColumnVarNameInTable="column材料名称" msprop:Generator_ColumnPropNameInTable="材料名称Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="型号" msprop:Generator_UserColumnName="型号" msprop:Generator_ColumnPropNameInRow="型号" msprop:Generator_ColumnVarNameInTable="column型号" msprop:Generator_ColumnPropNameInTable="型号Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="领取数量" msprop:Generator_UserColumnName="领取数量" msprop:Generator_ColumnPropNameInRow="领取数量" msprop:Generator_ColumnVarNameInTable="column领取数量" msprop:Generator_ColumnPropNameInTable="领取数量Column" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
