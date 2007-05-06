@@ -35,7 +35,7 @@
                     <td>
                         <asp:TextBox ID="TxtSL" runat="server" AutoCompleteType="Disabled" Text='<%# Bind("领取数量") %>'></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtSL"
-                            Display="None" ErrorMessage="数字格式不正确" ValidationExpression="-?\d+"></asp:RegularExpressionValidator>
+                            Display="None" ErrorMessage="数字格式不正确" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtSL"
                             Display="None" ErrorMessage="必须输入数量"></asp:RequiredFieldValidator>
                     </td>
@@ -65,9 +65,9 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
-        ConnectionString="<%$ ConnectionStrings:wzps %>" InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 领用人) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, '仓库初始化录入' AS Expr1 FROM 材料价格 WHERE (id = @材料id)"
+        ConnectionString="<%$ ConnectionStrings:wzps %>" InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 备注) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, '仓库初始化录入' AS Expr1 FROM 材料价格 WHERE (id = @材料id)"
         OldValuesParameterFormatString="original_{0}" OnInserting="psjl_Inserting" OnLoad="psjl_Load"
-        SelectCommand="SELECT 领货记录.领取用户, 领货记录.领取数量, 材料价格.材料名称, 材料价格.型号, 领货记录.id FROM 领货记录 INNER JOIN 材料价格 ON 领货记录.材料id = 材料价格.id" DeleteCommand="DELETE FROM 领货记录 WHERE (id = @original_id)">
+        SelectCommand="SELECT 领货记录.领取用户, 领货记录.领取数量, 材料价格.材料名称, 材料价格.型号, 领货记录.id FROM 领货记录 INNER JOIN 材料价格 ON 领货记录.材料id = 材料价格.id WHERE (领货记录.备注 = '仓库初始化录入')" DeleteCommand="DELETE FROM 领货记录 WHERE (id = @original_id)">
         <InsertParameters>
             <asp:Parameter Name="领取用户" />
             <asp:Parameter Name="领取数量" />

@@ -11,7 +11,7 @@
     <div>
         <a href="JLAdd.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
-            DataSourceID="JL" AllowPaging="True">
+            DataSourceID="JL" AllowPaging="True" OnRowDataBound="GridView1_RowDataBound">
             <Columns>
                 <asp:TemplateField ShowHeader="False">
                     <EditItemTemplate>
@@ -67,7 +67,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户, 材料id, 领取数量, 领用人 FROM 领货记录 WHERE (领取数量 > 0) ORDER BY id DESC"
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM 领货记录 WHERE (备注 <> '仓库初始化录入' OR 备注 IS NULL) AND (领取数量 > 0) ORDER BY id DESC"
             UpdateCommand="UPDATE 领货记录 SET 材料id = @材料id, 领取数量 = @领取数量, 领用人 = @领用人 WHERE (id = @original_id)">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
