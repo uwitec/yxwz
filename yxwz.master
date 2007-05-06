@@ -23,7 +23,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 200px">
+                <td style="width: 200px" valign="top">
                     &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
                         <ParentNodeStyle Font-Bold="False" />
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
@@ -39,7 +39,7 @@
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表">
                                 <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/Admin/JLHZ.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="明细报表" Value="明细报表"></asp:TreeNode>
+                                <asp:TreeNode Text="明细报表" Value="明细报表" NavigateUrl="~/User/rpt_LQJL.aspx"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="物资品种" Value="物资品种">
                                 <asp:TreeNode NavigateUrl="~/Admin/CLAdd.aspx" Text="增加材料品种" Value="增加材料品种"></asp:TreeNode>
