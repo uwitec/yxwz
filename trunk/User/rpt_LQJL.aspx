@@ -5,11 +5,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
     &nbsp;
     <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True"
-        Height="50px" ReportSourceID="CrystalReportSourceLQJL" Width="350px" />
+        Height="50px" ReportSourceID="CrystalReportSourceLQJL" Width="901px" HasCrystalLogo="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" DisplayGroupTree="False" />
     <CR:CrystalReportSource ID="CrystalReportSourceLQJL" runat="server">
-        <Report FileName="rpt\LQJL.rpt">
+        <Report FileName="..\rpt\LQJL.rpt">
             <DataSources>
-                <CR:DataSourceRef DataSourceID="ObjectDataSource1" />
+                <CR:DataSourceRef DataSourceID="ObjectDataSource1" TableName="JL" />
             </DataSources>
         </Report>
     </CR:CrystalReportSource>
