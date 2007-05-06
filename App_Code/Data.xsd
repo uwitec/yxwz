@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="data" targetNamespace="http://tempuri.org/yxwz.xsd" xmlns:mstns="http://tempuri.org/yxwz.xsd" xmlns="http://tempuri.org/yxwz.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="wzps" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="wzps (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.wzps.ConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JLTableAdapter" GeneratorDataComponentClassName="JLTableAdapter" Name="JL" UserDataComponentName="JLTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wzps (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT 领货记录.时间, 领货记录.领取用户, 材料价格.材料名称, 材料价格.型号, 领货记录.领取数量 FROM 材料价格 INNER JOIN 领货记录 ON 材料价格.id = 领货记录.材料id</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="时间" DataSetColumn="时间" />
+              <Mapping SourceColumn="领取用户" DataSetColumn="领取用户" />
+              <Mapping SourceColumn="材料名称" DataSetColumn="材料名称" />
+              <Mapping SourceColumn="型号" DataSetColumn="型号" />
+              <Mapping SourceColumn="领取数量" DataSetColumn="领取数量" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="data" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="data" msprop:Generator_DataSetName="data">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JL" msprop:Generator_UserTableName="JL" msprop:Generator_RowDeletedName="JLRowDeleted" msprop:Generator_RowChangedName="JLRowChanged" msprop:Generator_RowClassName="JLRow" msprop:Generator_RowChangingName="JLRowChanging" msprop:Generator_RowEvArgName="JLRowChangeEvent" msprop:Generator_RowEvHandlerName="JLRowChangeEventHandler" msprop:Generator_TableClassName="JLDataTable" msprop:Generator_TableVarName="tableJL" msprop:Generator_RowDeletingName="JLRowDeleting" msprop:Generator_TablePropName="JL">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="时间" msprop:Generator_UserColumnName="时间" msprop:Generator_ColumnPropNameInRow="时间" msprop:Generator_ColumnVarNameInTable="column时间" msprop:Generator_ColumnPropNameInTable="时间Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="领取用户" msprop:Generator_UserColumnName="领取用户" msprop:Generator_ColumnPropNameInRow="领取用户" msprop:Generator_ColumnVarNameInTable="column领取用户" msprop:Generator_ColumnPropNameInTable="领取用户Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="材料名称" msprop:Generator_UserColumnName="材料名称" msprop:Generator_ColumnPropNameInRow="材料名称" msprop:Generator_ColumnVarNameInTable="column材料名称" msprop:Generator_ColumnPropNameInTable="材料名称Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="型号" msprop:Generator_UserColumnName="型号" msprop:Generator_ColumnPropNameInRow="型号" msprop:Generator_ColumnVarNameInTable="column型号" msprop:Generator_ColumnPropNameInTable="型号Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="领取数量" msprop:Generator_UserColumnName="领取数量" msprop:Generator_ColumnPropNameInRow="领取数量" msprop:Generator_ColumnVarNameInTable="column领取数量" msprop:Generator_ColumnPropNameInTable="领取数量Column" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="领货记录" msprop:Generator_UserTableName="领货记录" msprop:Generator_RowDeletedName="领货记录RowDeleted" msprop:Generator_RowChangedName="领货记录RowChanged" msprop:Generator_RowClassName="领货记录Row" msprop:Generator_RowChangingName="领货记录RowChanging" msprop:Generator_RowEvArgName="领货记录RowChangeEvent" msprop:Generator_RowEvHandlerName="领货记录RowChangeEventHandler" msprop:Generator_TableClassName="领货记录DataTable" msprop:Generator_TableVarName="table领货记录" msprop:Generator_RowDeletingName="领货记录RowDeleting" msprop:Generator_TablePropName="领货记录">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
+              <xs:element name="时间" msprop:Generator_UserColumnName="时间" msprop:Generator_ColumnVarNameInTable="column时间" msprop:Generator_ColumnPropNameInRow="时间" msprop:Generator_ColumnPropNameInTable="时间Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="领取用户" msprop:Generator_UserColumnName="领取用户" msprop:Generator_ColumnVarNameInTable="column领取用户" msprop:Generator_ColumnPropNameInRow="领取用户" msprop:Generator_ColumnPropNameInTable="领取用户Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="材料id" msprop:Generator_UserColumnName="材料id" msprop:Generator_ColumnVarNameInTable="column材料id" msprop:Generator_ColumnPropNameInRow="材料id" msprop:Generator_ColumnPropNameInTable="材料idColumn" type="xs:int" />
+              <xs:element name="领取时候单价" msprop:Generator_UserColumnName="领取时候单价" msprop:Generator_ColumnVarNameInTable="column领取时候单价" msprop:Generator_ColumnPropNameInRow="领取时候单价" msprop:Generator_ColumnPropNameInTable="领取时候单价Column" type="xs:decimal" />
+              <xs:element name="领取数量" msprop:Generator_UserColumnName="领取数量" msprop:Generator_ColumnVarNameInTable="column领取数量" msprop:Generator_ColumnPropNameInRow="领取数量" msprop:Generator_ColumnPropNameInTable="领取数量Column" type="xs:int" />
+              <xs:element name="用途" msprop:Generator_UserColumnName="用途" msprop:Generator_ColumnVarNameInTable="column用途" msprop:Generator_ColumnPropNameInRow="用途" msprop:Generator_ColumnPropNameInTable="用途Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="领用人" msprop:Generator_UserColumnName="领用人" msprop:Generator_ColumnVarNameInTable="column领用人" msprop:Generator_ColumnPropNameInRow="领用人" msprop:Generator_ColumnPropNameInTable="领用人Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="发料人" msprop:Generator_UserColumnName="发料人" msprop:Generator_ColumnVarNameInTable="column发料人" msprop:Generator_ColumnPropNameInRow="发料人" msprop:Generator_ColumnPropNameInTable="发料人Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="备注" msprop:Generator_UserColumnName="备注" msprop:Generator_ColumnVarNameInTable="column备注" msprop:Generator_ColumnPropNameInRow="备注" msprop:Generator_ColumnPropNameInTable="备注Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:领货记录" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

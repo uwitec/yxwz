@@ -50,6 +50,7 @@
                                 <asp:TreeNode Text="用户管理" Value="用户管理" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/Admin/InitInputSetting.aspx" Text="初始录入设置" Value="初始录入设置">
                                 </asp:TreeNode>
+                                <asp:TreeNode Text="锁定已录入项目" Value="锁定已录入项目"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="用户" Value="用户">
                                 <asp:TreeNode NavigateUrl="~/User/UserChangPassword.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
@@ -60,7 +61,7 @@
                     </asp:TreeView>
                     &nbsp;
                 </td>
-                <td>
+                <td valign="top">
         <asp:contentplaceholder id="main" runat="server">
         </asp:contentplaceholder>
                 </td>
