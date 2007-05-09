@@ -15,4 +15,11 @@ public partial class yxwz : System.Web.UI.MasterPage
     {
 
     }
+    protected void TreeView1_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            TreeView1.
+        }
+    }
 }

@@ -14,6 +14,6 @@
         </Report>
     </CR:CrystalReportSource>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetData" TypeName="yxwzTableAdapters.JLTableAdapter"></asp:ObjectDataSource>
+        SelectMethod="GetData" TypeName="dataTableAdapters.JLTableAdapter"></asp:ObjectDataSource>
 </asp:Content>
 
