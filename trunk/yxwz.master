@@ -24,14 +24,14 @@
             </tr>
             <tr>
                 <td style="width: 200px" valign="top">
-                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
+                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True" DataSourceID="XmlDataSource1" OnLoad="TreeView1_Load">
                         <ParentNodeStyle Font-Bold="False" />
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                         <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
                             VerticalPadding="0px" />
                         <Nodes>
-                            <asp:TreeNode Text="物资使用" Value="物资使用">
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入" NavigateUrl="~/User/InitInput.aspx"></asp:TreeNode>
+                            <asp:TreeNode Text="物资使用" Value="物资使用">
                                 <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLAddManage.aspx" Text="入库记录" Value="入库记录"></asp:TreeNode>
                                 <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLDel.aspx"></asp:TreeNode>
@@ -50,7 +50,7 @@
                                 <asp:TreeNode Text="用户管理" Value="用户管理" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/Admin/InitInputSetting.aspx" Text="初始录入设置" Value="初始录入设置">
                                 </asp:TreeNode>
-                                <asp:TreeNode Text="锁定已录入项目" Value="锁定已录入项目"></asp:TreeNode>
+                                <asp:TreeNode Text="锁定已录入项目" Value="锁定已录入项目" NavigateUrl="~/Admin/JLLock.aspx"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="用户" Value="用户">
                                 <asp:TreeNode NavigateUrl="~/User/UserChangPassword.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
@@ -59,6 +59,7 @@
                         <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
                             NodeSpacing="0px" VerticalPadding="0px" />
                     </asp:TreeView>
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server"></asp:XmlDataSource>
                     &nbsp;
                 </td>
                 <td valign="top">

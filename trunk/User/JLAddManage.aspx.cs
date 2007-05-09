@@ -20,13 +20,13 @@ public partial class User_JLManage : System.Web.UI.Page
     }
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        if (e.Row.RowType != DataControlRowType.DataRow)
-            return;
+        //if (e.Row.RowType != DataControlRowType.DataRow)
+        //    return;
 
-        if (!User.IsInRole("营销部管理员"))
-        {
-            //if (Convert.ToDateTime(((data.领货记录Row)e.Row.DataItem).时间) < DateTime.Parse(ConfigurationManager.AppSettings["初始录入结束时间"]))
-                e.Row.Cells[0].Visible = false;
-        }
+        //if (!User.IsInRole("营销部管理员"))
+        //{
+        //    //if (Convert.ToDateTime(((data.领货记录Row)e.Row.DataItem).时间) < DateTime.Parse(ConfigurationManager.AppSettings["初始录入结束时间"]))
+        //        e.Row.Cells[0].Visible = false;
+        //}
     }
 }
