@@ -79,7 +79,7 @@
                 <asp:Parameter Name="领用人" />
             </UpdateParameters>
             <SelectParameters>
-                <asp:Parameter Name="记录锁定时间" />
+                <asp:Parameter Name="记录锁定时间" Type="DateTime" />
             </SelectParameters>
         </asp:SqlDataSource>
     

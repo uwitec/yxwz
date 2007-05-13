@@ -18,11 +18,13 @@ public partial class User_JLManage : System.Web.UI.Page
         {
             if (User.IsInRole("营销部管理员"))
             {
-                JL.SelectParameters["记录锁定时间"].DefaultValue = WebConfigurationManager.AppSettings.Get("记录锁定时间");
+                JL.SelectParameters.Clear();
+                JL.SelectParameters.Add("记录锁定时间", System.TypeCode.DateTime, "2000-1-1");
             }
             else
             {
-                JL.SelectParameters["记录锁定时间"].DefaultValue = "2007-1-1";
+                JL.SelectParameters.Clear();
+                JL.SelectParameters.Add("记录锁定时间", System.TypeCode.DateTime, WebConfigurationManager.AppSettings.Get("记录锁定时间"));
             }
         }
     }
