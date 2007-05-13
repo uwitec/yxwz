@@ -8,15 +8,23 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Web.Configuration;
 
 public partial class User_JLManage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["userPower"] == "Admin")
-        //{
-        //    JL.SelectCommand = "SELECT id, 时间, 领取用户id, 材料id, 领取数量 FROM 领货记录 ORDER BY id DESC";
-        //}
+        if (!IsPostBack)
+        {
+            if (User.IsInRole("营销部管理员"))
+            {
+                JL.SelectParameters["记录锁定时间"].DefaultValue = WebConfigurationManager.AppSettings.Get("记录锁定时间");
+            }
+            else
+            {
+                JL.SelectParameters["记录锁定时间"].DefaultValue = "2007-1-1";
+            }
+        }
     }
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
