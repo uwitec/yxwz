@@ -12,6 +12,7 @@ using System.Web.Configuration;
 
 public partial class yxwz : System.Web.UI.MasterPage
 {
+	
     protected void Page_Load(object sender, EventArgs e)
     {
 
