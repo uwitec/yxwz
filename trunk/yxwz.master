@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td style="width: 200px" valign="top">
-                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True"  OnLoad="TreeView1_Load">
+                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True"  OnLoad="TreeView1_Load" EnableViewState="False">
                         <ParentNodeStyle Font-Bold="False" />
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                         <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
