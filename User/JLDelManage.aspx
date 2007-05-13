@@ -69,7 +69,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户, 材料id, 0 - 领取数量 AS 领取数量, 用途, 领用人, 发料人, 备注 FROM 领货记录 WHERE (0 - 领取数量 > 0) ORDER BY id DESC"
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户, 材料id, 0 - 领取数量 AS 领取数量, 用途, 领用人, 发料人, 备注 FROM 领货记录 WHERE (0 - 领取数量 > 0) AND (时间 > @记录锁定时间) ORDER BY id DESC"
             UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = 0 - @领取数量 WHERE [id] = @original_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
@@ -79,6 +79,9 @@
                 <asp:Parameter Name="领取数量" Type="Int32" />
                 <asp:Parameter Name="original_id" Type="Int32" />
             </UpdateParameters>
+            <SelectParameters>
+                <asp:Parameter Name="记录锁定时间" Type="DateTime" />
+            </SelectParameters>
         </asp:SqlDataSource>
     
     </div>

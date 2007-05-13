@@ -12,13 +12,13 @@ using System.Web.Configuration;
 
 public partial class Admin_JLLock : System.Web.UI.Page
 {
-    const string theKeyName = "纪录锁定时间";
+    const string theKeyName = "记录锁定时间";
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            Label1.Text = "纪录锁定时间为" + WebConfigurationManager.AppSettings.Get(theKeyName);
+            Label1.Text = "记录锁定时间" + WebConfigurationManager.AppSettings.Get(theKeyName);
         }
 
     }
@@ -32,6 +32,6 @@ public partial class Admin_JLLock : System.Web.UI.Page
         Configuration cfg = WebConfigurationManager.OpenWebConfiguration("~");
         cfg.AppSettings.Settings[theKeyName].Value = time.ToString();
         cfg.Save();
-        Label1.Text = "纪录锁定时间已设置为" + time.ToString();
+        Label1.Text = "记录锁定时间已设置为" + time.ToString();
     }
 }
