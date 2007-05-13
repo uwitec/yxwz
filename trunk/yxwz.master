@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td style="width: 200px" valign="top">
-                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True" DataSourceID="XmlDataSource1" OnLoad="TreeView1_Load">
+                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True"  OnLoad="TreeView1_Load">
                         <ParentNodeStyle Font-Bold="False" />
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                         <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
@@ -59,10 +59,8 @@
                         <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
                             NodeSpacing="0px" VerticalPadding="0px" />
                     </asp:TreeView>
-                    <asp:XmlDataSource ID="XmlDataSource1" runat="server"></asp:XmlDataSource>
-                    &nbsp;
                 </td>
-                <td valign="top">
+                <td>
         <asp:contentplaceholder id="main" runat="server">
         </asp:contentplaceholder>
                 </td>
