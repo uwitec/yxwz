@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RptFilterBar.ascx.cs" Inherits="Controls_RptFilterBar" %>
 <%@ Register Src="UserSelect.ascx" TagName="UserSelect" TagPrefix="uc1" %>
-<script type="text/javascript" src="../js/Calendar30.js"></script>
 选择供电所: &nbsp;<uc1:UserSelect ID="UserSelect1" runat="server" />
 &nbsp;
 选择开始日期:<input id="DateSelectStart" runat="server" onfocus="calendar()" value="2007-1-1" />

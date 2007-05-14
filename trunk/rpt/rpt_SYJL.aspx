@@ -1,4 +1,4 @@
-ï»¿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="rpt_LQJL.aspx.cs" Inherits="User_rpt_LQJL" Title="Untitled Page" %>
+<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="rpt_SYJL.aspx.cs" Inherits="User_rpt_LQJL" Title="Untitled Page" %>
 
 <%@ Register Src="../Controls/RptFilterBar.ascx" TagName="RptFilterBar" TagPrefix="uc1" %>
 
@@ -22,9 +22,9 @@
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
         SelectMethod="GetData" TypeName="dataTableAdapters.JLTableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
         <SelectParameters>
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="ç”¨æˆ·åç§°" PropertyName="SelectedUser" />
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="å¼€å§‹æ—¶é—´" DefaultValue="" PropertyName="StartTime" />
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="ç»“æŸæ—¶é—´" PropertyName="EndTime" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="ÓÃ»§Ãû³Æ" PropertyName="SelectedUser" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="¿ªÊ¼Ê±¼ä" DefaultValue="" PropertyName="StartTime" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="½áÊøÊ±¼ä" PropertyName="EndTime" />
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>
