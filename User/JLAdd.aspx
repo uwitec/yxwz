@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLAdd.aspx.cs" Inherits="Admin_AddJL"  MasterPageFile="~/yxwz.master" %>
 
+<%@ Register Src="../Controls/UserSelect.ascx" TagName="UserSelect" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
     <div>
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
@@ -12,9 +14,8 @@
                         <td style="height: 68px" >
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
                                 DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                                SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]" OnLoad="users_Load"></asp:SqlDataSource>
+                            </asp:DropDownList>&nbsp;
+                            <uc1:UserSelect ID="UserSelect1" runat="server" />
                             <br />
                             <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                                 Visible="False"></asp:Label></td>

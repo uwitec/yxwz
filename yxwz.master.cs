@@ -19,6 +19,9 @@ public partial class yxwz : System.Web.UI.MasterPage
     }
     protected void TreeView1_Load(object sender, EventArgs e)
     {
+        if (!Page.User.IsInRole("营销部管理员"))
+            TreeView1.Nodes.RemoveAt(3);
+
         if (DateTime.Now > DateTime.Parse(WebConfigurationManager.AppSettings.Get("初始录入结束时间")))
         {
             TreeView1.Nodes.RemoveAt(0);

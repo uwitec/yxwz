@@ -4,6 +4,11 @@
 
 <%@ Register Src="../Controls/RptFilterBar.ascx" TagName="RptFilterBar" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
-    <uc1:RptFilterBar ID="RptFilterBar1" runat="server"  />
+    &nbsp;<asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource1">
+        <ItemTemplate>
+    <uc2:UserSelect ID="UserSelect1" runat="server" />
+        </ItemTemplate>
+    </asp:FormView>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
 </asp:Content>
 

@@ -8,19 +8,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.ComponentModel;
 
-[ControlValueProperty("SelectUser")]   
+[ControlValueProperty("SelectedUser")]
+[Bindable(true)]
 public partial class Controls_UserSelect : System.Web.UI.UserControl
 { 
-    public string SelectUser
+    [Bindable(true,BindingDirection.TwoWay)]
+    public string SelectedUser
     {
         get { return DropDownList1.SelectedValue; }
         set { DropDownList1.SelectedValue = value; }
     }
-    protected void Page_Load(object sender, EventArgs e)
+
+    protected override void OnInit(EventArgs e)
     {
-        if(!IsPostBack)
+        if (!IsPostBack)
+        {
+            DataBind();
             DropDownList1.SelectedIndex = 0;
+        }
+        base.OnInit(e);
     }
 
     protected void users_Load(object sender, EventArgs e)

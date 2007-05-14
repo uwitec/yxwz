@@ -17,7 +17,7 @@
             <tr>
                 <td colspan="2" style="height: 18px; text-align: right">
                     <asp:LoginName ID="LoginName1" runat="server" ForeColor="#0000C0" FormatString="已登录为：{0}" />
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/login.aspx" />
                     &nbsp;
                 </td>
             </tr>
@@ -30,28 +30,30 @@
                             VerticalPadding="0px" />
                         <Nodes>
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入" NavigateUrl="~/User/InitInput.aspx"></asp:TreeNode>
-                            <asp:TreeNode Text="物资使用" Value="物资使用">
+                            <asp:TreeNode Text="物资使用" Value="物资使用" Expanded="True">
                                 <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLAddManage.aspx" Text="入库记录" Value="入库记录"></asp:TreeNode>
                                 <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLDel.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLDelManage.aspx" Text="使用记录" Value="使用记录"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Text="报表" Value="报表">
+                            <asp:TreeNode Text="报表" Value="报表" Expanded="True">
                                 <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/rpt/rpt_HZ.aspx"></asp:TreeNode>
                                 <asp:TreeNode Text="明细报表" Value="明细报表" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Text="物资品种" Value="物资品种">
+                            <asp:TreeNode Text="管理" Value="管理" Expanded="False">
+                            <asp:TreeNode Text="物资品种" Value="物资品种" Expanded="True">
                                 <asp:TreeNode NavigateUrl="~/Admin/CLAdd.aspx" Text="增加材料品种" Value="增加材料品种"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/Admin/ClManage.aspx" Text="材料品种管理" Value="材料品种管理"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Text="管理" Value="管理">
-                                <asp:TreeNode Text="增加用户" Value="增加用户" NavigateUrl="~/Admin/userAdd.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="用户管理" Value="用户管理" NavigateUrl="~/Admin/UserAdmin.aspx"></asp:TreeNode>
+                                <asp:TreeNode Expanded="True" Text="用户管理" Value="用户管理">
+                                    <asp:TreeNode NavigateUrl="~/Admin/userAdd.aspx" Text="增加用户" Value="增加用户"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/Admin/UserAdmin.aspx" Text="用户管理" Value="用户管理"></asp:TreeNode>
+                                </asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/Admin/InitInputSetting.aspx" Text="初始录入设置" Value="初始录入设置">
                                 </asp:TreeNode>
                                 <asp:TreeNode Text="锁定已录入项目" Value="锁定已录入项目" NavigateUrl="~/Admin/JLLock.aspx"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Text="用户" Value="用户">
+                            <asp:TreeNode Text="用户" Value="用户" Expanded="True">
                                 <asp:TreeNode NavigateUrl="~/User/UserChangPassword.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
                             </asp:TreeNode>
                         </Nodes>
