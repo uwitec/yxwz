@@ -13,7 +13,16 @@ public partial class User_rpt_LQJL : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Write(string.Format("{0}/{1}/{2}",UserSelect1.SelectUser,DateSelectStart.SelectDate,DateSelectEnd.SelectDate));
+        if (!IsPostBack)
+        {
+            if (Request.QueryString.Count > 0)
+            {
+                RptFilterBar1.StartTime = Request.QueryString["StartTime"];
+                RptFilterBar1.EndTime = Request.QueryString["EndTime"];
+                RptFilterBar1.SelectedUser = Request.QueryString["user"];
+                //ObjectDataSource1.FilterExpression = "材料ID=7";// +Request.QueryString["clID"];
+            }
+        }
     }
     protected void ObjectDataSource1_DataBinding(object sender, EventArgs e)
     {

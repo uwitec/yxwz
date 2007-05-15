@@ -15,7 +15,8 @@
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
                                 DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
                             </asp:DropDownList>&nbsp;
-                            <uc1:UserSelect ID="UserSelect1" runat="server" />
+                            <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
+                                OnLoad="users_Load" SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
                             <br />
                             <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                                 Visible="False"></asp:Label></td>

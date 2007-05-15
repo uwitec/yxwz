@@ -26,7 +26,6 @@ public partial class Controls_UserSelect : System.Web.UI.UserControl
         if (!IsPostBack)
         {
             DataBind();
-            DropDownList1.SelectedIndex = 0;
         }
         base.OnInit(e);
     }

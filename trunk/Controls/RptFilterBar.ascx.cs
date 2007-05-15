@@ -18,13 +18,13 @@ public partial class Controls_RptFilterBar : System.Web.UI.UserControl
     }
     public string StartTime
     {
-        get { return DateSelectStart.Value; }
-        set { DateSelectStart.Value = value; }
+        get { return DateSelectStart.Value + " 00:00:00"; }
+        set { DateSelectStart.Value = DateTime.Parse(value).ToShortDateString(); }
     }
     public string EndTime
     {
-        get { return DateSelectEnd.Value; }
-        set { DateSelectEnd.Value = value; }
+        get { return DateSelectEnd.Value + " 23:59:59"; }
+        set { DateSelectEnd.Value = DateTime.Parse(value).ToShortDateString(); }
     }
 
     protected override void OnLoad(EventArgs e)
@@ -33,9 +33,16 @@ public partial class Controls_RptFilterBar : System.Web.UI.UserControl
 
         if (!IsPostBack)
         {
-            
-            DateSelectStart.Value = DateTime.Now.ToShortDateString();
-            DateSelectEnd.Value = DateTime.Now.AddDays(1).ToShortDateString();
+            if(DateSelectStart.Value == "")
+            {
+            DateTime startTime = DateTime.Now;
+            startTime = startTime.AddDays(0-startTime.Day+1);
+            DateSelectStart.Value = startTime.ToShortDateString();
+            }
+            if (DateSelectEnd.Value == "")
+            {
+            DateSelectEnd.Value = DateTime.Now.ToShortDateString();
+            }
         }
         base.OnInit(e);
     }

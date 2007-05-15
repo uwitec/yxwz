@@ -15,12 +15,12 @@
     <CR:CrystalReportSource ID="CrystalReportSourceLQJL" runat="server">
         <Report FileName="..\rpt\SYJL.rpt">
             <DataSources>
-                <CR:DataSourceRef DataSourceID="ObjectDataSource1" TableName="领货记录" />
+                <CR:DataSourceRef DataSourceID="ObjectDataSource1" TableName="使用记录" />
             </DataSources>
         </Report>
     </CR:CrystalReportSource>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetSYJL" TypeName="dataTableAdapters.领货记录TableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
+        SelectMethod="GetSYJL" TypeName="dataTableAdapters.使用记录TableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
         <SelectParameters>
             <asp:ControlParameter ControlID="RptFilterBar1" Name="用户名称" PropertyName="SelectedUser"
                 Type="String" />
