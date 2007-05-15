@@ -20,11 +20,14 @@
         </Report>
     </CR:CrystalReportSource>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetData" TypeName="dataTableAdapters.JLTableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
+        SelectMethod="GetLQJL" TypeName="dataTableAdapters.JLTableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
         <SelectParameters>
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="用户名称" PropertyName="SelectedUser" />
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="开始时间" DefaultValue="" PropertyName="StartTime" />
-            <asp:ControlParameter ControlID="RptFilterBar1" Name="结束时间" PropertyName="EndTime" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="用户名称" PropertyName="SelectedUser"
+                Type="String" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="开始时间" PropertyName="StartTime"
+                Type="DateTime" />
+            <asp:ControlParameter ControlID="RptFilterBar1" Name="结束时间" PropertyName="EndTime"
+                Type="DateTime" />
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>

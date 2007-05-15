@@ -29,10 +29,11 @@ public partial class Controls_RptFilterBar : System.Web.UI.UserControl
 
     protected override void OnLoad(EventArgs e)
     {
+        Page.ClientScript.RegisterClientScriptInclude("梅花雨", "../js/Calendar30.js");
+
         if (!IsPostBack)
         {
-            Page.ClientScript.RegisterClientScriptInclude("梅花雨", "../js/Calendar30.js");
-
+            
             DateSelectStart.Value = DateTime.Now.ToShortDateString();
             DateSelectEnd.Value = DateTime.Now.AddDays(1).ToShortDateString();
         }
