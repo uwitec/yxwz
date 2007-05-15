@@ -30,7 +30,7 @@
                             VerticalPadding="0px" />
                         <Nodes>
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入" NavigateUrl="~/User/InitInput.aspx"></asp:TreeNode>
-                            <asp:TreeNode Text="物资使用" Value="物资使用" Expanded="True">
+                            <asp:TreeNode Text="当月物资使用" Value="当月物资使用" Expanded="True">
                                 <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLAddManage.aspx" Text="入库记录" Value="入库记录"></asp:TreeNode>
                                 <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLDel.aspx"></asp:TreeNode>
@@ -38,7 +38,8 @@
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表" Expanded="True">
                                 <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/rpt/rpt_HZ.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="明细报表" Value="明细报表" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="材料领取" Value="材料领取" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/rpt/rpt_SYJL.aspx" Text="材料使用" Value="材料使用"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="管理" Value="管理" Expanded="False">
                             <asp:TreeNode Text="物资品种" Value="物资品种" Expanded="True">
