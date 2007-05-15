@@ -55,7 +55,7 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("领取数量") %>'></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1"
-                            Display="Dynamic" ErrorMessage="必须输入数字" ValidationExpression="-?\d+"></asp:RegularExpressionValidator>
+                            Display="Dynamic" ErrorMessage="必须输入数字" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("领取数量") %>'></asp:Label>
