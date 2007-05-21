@@ -11,7 +11,7 @@
     <uc1:RptFilterBar ID="RptFilterBar1" runat="server" />
     <br />
     <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True"
-        Height="50px" ReportSourceID="CrystalReportSourceLQJL" Width="901px" HasCrystalLogo="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" DisplayGroupTree="False" />
+        Height="1039px" ReportSourceID="CrystalReportSourceLQJL" Width="773px" HasCrystalLogo="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" DisplayGroupTree="False" />
     <CR:CrystalReportSource ID="CrystalReportSourceLQJL" runat="server">
         <Report FileName="..\rpt\LQJL.rpt">
             <DataSources>
@@ -20,7 +20,7 @@
         </Report>
     </CR:CrystalReportSource>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetLQJL" TypeName="dataTableAdapters.领取记录TableAdapter" OnDataBinding="ObjectDataSource1_DataBinding">
+        SelectMethod="GetLQJL" TypeName="dataTableAdapters.领取记录TableAdapter" OnDataBinding="ObjectDataSource1_DataBinding"  OnFiltering="ObjectDataSource1_Filtering" OnSelected="ObjectDataSource1_Selected">
         <SelectParameters>
             <asp:ControlParameter ControlID="RptFilterBar1" Name="用户名称" PropertyName="SelectedUser"
                 Type="String" />
@@ -29,6 +29,9 @@
             <asp:ControlParameter ControlID="RptFilterBar1" Name="结束时间" PropertyName="EndTime"
                 Type="DateTime" />
         </SelectParameters>
+        <FilterParameters>
+            <asp:QueryStringParameter Name="clID" QueryStringField="clID" />
+        </FilterParameters>
     </asp:ObjectDataSource>
 </asp:Content>
 

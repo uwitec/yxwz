@@ -20,12 +20,19 @@ public partial class User_rpt_LQJL : System.Web.UI.Page
                 RptFilterBar1.StartTime = Request.QueryString["StartTime"];
                 RptFilterBar1.EndTime = Request.QueryString["EndTime"];
                 RptFilterBar1.SelectedUser = Request.QueryString["user"];
-                //ObjectDataSource1.FilterExpression = "材料ID=7";// +Request.QueryString["clID"];
+                //ObjectDataSource1.FilterExpression = "材料ID=j";// +Request.QueryString["clID"];
             }
         }
     }
     protected void ObjectDataSource1_DataBinding(object sender, EventArgs e)
     {
         //DateSelectEnd.
+    }
+    protected void ObjectDataSource1_Filtering(object sender, ObjectDataSourceFilteringEventArgs e)
+    {
+    }
+    protected void ObjectDataSource1_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+    {
+        
     }
 }
