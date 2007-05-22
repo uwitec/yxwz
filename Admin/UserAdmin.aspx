@@ -2,7 +2,9 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div>
+    <div style="text-align: center">
+        用户管理<br />
+        <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowDataBound="GridView1_RowDataBound" OnRowDeleting="GridView1_RowDeleting">
             <Columns>
                 <asp:BoundField DataField="UserName" HeaderText="用户名" ReadOnly="True" SortExpression="UserName" />

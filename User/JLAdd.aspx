@@ -3,7 +3,9 @@
 <%@ Register Src="../Controls/UserSelect.ascx" TagName="UserSelect" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div>
+    <div style="text-align: center">
+        &nbsp; 供电所入库<br />
+        <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
             DefaultMode="Insert" Width="256px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>
@@ -77,7 +79,7 @@
                 <asp:Parameter Name="材料id" />
             </InsertParameters>
         </asp:SqlDataSource>
-        &nbsp;
+        &nbsp; &nbsp;&nbsp;
     
     </div>
 </asp:Content>

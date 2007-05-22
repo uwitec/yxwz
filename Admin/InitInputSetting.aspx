@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="InitInputSetting.aspx.cs" Inherits="Admin_InitInputSetting" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+    初始化录入结束时间设置<br />
+    <br />
     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
     &nbsp;
     <asp:Button ID="btSetEndTime" runat="server" Text="设置结束时间" OnClick="btSetEndTime_Click" />&nbsp;

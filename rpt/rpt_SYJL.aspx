@@ -8,10 +8,12 @@
 <%@ Register Assembly="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304"
     Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+    供电所材料使用报表<br />
+    <br />
     <uc1:RptFilterBar ID="RptFilterBar1" runat="server" />
     <br />
     <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True"
-        Height="50px" ReportSourceID="CrystalReportSourceLQJL" Width="901px" HasCrystalLogo="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" DisplayGroupTree="False" />
+        Height="50px" ReportSourceID="CrystalReportSourceLQJL" Width="901px" HasCrystalLogo="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" DisplayGroupTree="False" HasDrillUpButton="False" />
     <CR:CrystalReportSource ID="CrystalReportSourceLQJL" runat="server">
         <Report FileName="..\rpt\SYJL.rpt">
             <DataSources>

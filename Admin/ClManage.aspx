@@ -8,7 +8,9 @@
         return confirm("真的要删除？");
     }
 </script>
-    <div>
+    <div style="text-align: center">
+        材料品种管理<br />
+        <br />
         <a href="CLAdd.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
             DataSourceID="cl">
