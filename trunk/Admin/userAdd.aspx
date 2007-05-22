@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="userAdd.aspx.cs" Inherits="Admin_userAdd" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+    <br />
     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Admin/userAdd.aspx" InvalidPasswordErrorMessage="密码最短长度为 {0}。" LoginCreatedUser="False" OnCreatedUser="CreateUserWizard1_CreatedUser" RequireEmail="False">
         <WizardSteps>
             <asp:CreateUserWizardStep runat="server">
@@ -7,7 +8,8 @@
                     <table border="0">
                         <tr>
                             <td align="center" colspan="2" style="height: 20px">
-                                注册新帐户</td>
+    添加新用户<br />
+                            </td>
                         </tr>
                         <tr>
                             <td align="right" style="height: 26px">

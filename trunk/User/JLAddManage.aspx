@@ -8,7 +8,9 @@
     }
 </script>
   
-    <div>
+    <div style="text-align: center">
+    <center>    入库记录<br /></center>
+        <br />
         <a href="JLAdd.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
             DataSourceID="JL" AllowPaging="True" OnRowDataBound="GridView1_RowDataBound">

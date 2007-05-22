@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="JLDel.aspx.cs" Inherits="User_JLDel" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div>
+    <div style="text-align: center">
+        供电所材料使用<br />
+        <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
             DefaultMode="Insert" Width="256px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>

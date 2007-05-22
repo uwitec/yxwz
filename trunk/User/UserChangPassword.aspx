@@ -2,10 +2,10 @@
 
 
 <asp:Content ContentPlaceHolderID="main" runat="server">
-    <div>
-        &nbsp;
+    <div style="text-align: center">
+        <br />
     
-        <asp:ChangePassword ID="ChangePassword1" runat="server">
+        <asp:ChangePassword ID="ChangePassword1" runat="server" PasswordLabelText="原密码:">
             <SuccessTemplate>
                 <table border="0" cellpadding="1" cellspacing="0" style="border-collapse: collapse">
                     <tr>

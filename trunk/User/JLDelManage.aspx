@@ -7,7 +7,9 @@
     }
 </script>
   
-    <div>
+    <div style="text-align: center">
+     <center>   材料使用记录<br /></center>
+        <br />
         <a href="JLDel.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
             DataSourceID="JL" AllowPaging="True">

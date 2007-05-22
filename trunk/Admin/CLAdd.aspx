@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CLAdd.aspx.cs" Inherits="Admin_AddCLPZ"  MasterPageFile="~/yxwz.master"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div>
+    <div style="text-align: center">
+        材料品种添加<br />
+        <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="id"
             DataSourceID="cl" DefaultMode="Insert" Height="50px" Width="251px" OnItemInserted="DetailsView1_ItemInserted">
             <Fields>
