@@ -13,7 +13,8 @@ public partial class User_InitInput : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!User.IsInRole("营销部管理员"))
+            psjl.FilterExpression = "领取用户 = '" + Membership.GetUser().UserName + "'";
     }
     protected void FormView1_Load(object sender, EventArgs e)
     {
@@ -32,14 +33,9 @@ public partial class User_InitInput : System.Web.UI.Page
         //(e.Command.Parameters["@领取用户id"] as SqlParameter).SqlDbType = SqlDbType.UniqueIdentifier;
     }
 
-    protected void users_Load(object sender, EventArgs e)
-    {
-        if (!User.IsInRole("营销部管理员"))
-            (sender as SqlDataSource).FilterExpression = "UserName = '" + Membership.GetUser().UserName + "'";
-    }
     protected void psjl_Load(object sender, EventArgs e)
+    {}
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (!User.IsInRole("营销部管理员"))
-            (sender as SqlDataSource).FilterExpression = "领取用户 = '" + Membership.GetUser().UserName + "'";
     }
 }

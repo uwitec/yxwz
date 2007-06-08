@@ -1,7 +1,15 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="InitInput.aspx.cs" Inherits="User_InitInput" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="InitInput.aspx.cs" Inherits="User_InitInput" Title="Untitled Page"  %>
+
+<%@ Register Src="../Controls/UserSelect.ascx" TagName="UserSelect" TagPrefix="uc2" %>
 
 <%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+  <script language=javascript type="text/jscript">
+    function confirmDel()
+    {
+        return confirm("真的要删除？");
+    }
+</script>
     <center >库存初始化录入<br /></center>
     <br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
@@ -13,11 +21,7 @@
                     <td style="height: 68px; width: 85px;">
                         供电所</td>
                     <td style="height: 68px; width: 423px;">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
-                            DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                            OnLoad="users_Load" SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
+                        <uc2:UserSelect ID="UserSelect1" runat="server" SelectedUser='<%# Bind("领取用户") %>' />
                         <br />
                         <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                             Visible="False"></asp:Label></td>
@@ -55,13 +59,18 @@
     </asp:FormView>
     &nbsp;<br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
-        DataSourceID="psjl">
+        DataSourceID="psjl" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" PageSize="50">
         <Columns>
             <asp:BoundField DataField="领取用户" HeaderText="领取用户" SortExpression="领取用户" />
             <asp:BoundField DataField="材料名称" HeaderText="材料名称" SortExpression="材料名称" />
             <asp:BoundField DataField="型号" HeaderText="型号" SortExpression="型号" />
             <asp:BoundField DataField="领取数量" HeaderText="领取数量" SortExpression="领取数量" />
-            <asp:CommandField ShowDeleteButton="True" />
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete"
+                        Text="删除" OnClientClick="javascript:return confirmDel();"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"

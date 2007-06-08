@@ -1,63 +1,61 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="JLDel.aspx.cs" Inherits="User_JLDel" Title="Untitled Page" %>
+<%@ Register Src="../Controls/UserSelect.ascx" TagName="UserSelect" TagPrefix="uc2" %>
+
+<%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
     <div style="text-align: center">
         供电所材料使用<br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
-            DefaultMode="Insert" Width="256px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
+            DefaultMode="Insert" Width="546px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>
                 <table>
                     <tr>
-                        <td style="height: 68px; width: 148px;">
+                        <td style="height: 68px; width: 96px;">
                         </td>
                         <td style="height: 68px" >
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
-                                DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-                                SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]" OnLoad="users_Load"></asp:SqlDataSource>
+                            &nbsp;
+                            <uc2:UserSelect ID="UserSelect1" runat="server" SelectedUser='<%# Bind("领取用户") %>' />
                             <br />
                             <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                                 Visible="False"></asp:Label></td>
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             物资名称：</td>
                         <td>
-                            <asp:DropDownList ID="DrpWZMC" runat="server" SelectedValue='<%# Bind("材料id") %>' DataSourceID="WZ" DataTextField="名称" DataValueField="id">
-                            </asp:DropDownList>&nbsp;
-        <asp:SqlDataSource ID="WZ" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-            SelectCommand="SELECT id, 材料名称 + 型号 AS 名称 FROM 材料价格"></asp:SqlDataSource>
+                            &nbsp;&nbsp;
+                            <uc1:WZSelect ID="WZSelect1" runat="server" 物资ID='<%# Bind("材料id") %>' />
     
     </td>
                         
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             发料人：</td>
                         <td>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("发料人") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             用途：</td>
                         <td>
                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("用途") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             领用人：</td>
                         <td>
                             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("领用人") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             备注：</td>
                         <td>
                             <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("备注") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td style="width: 148px">
+                        <td style="width: 96px">
                             数量</td>
                         <td>
                             <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量") %>' AutoCompleteType="Disabled"></asp:TextBox>
