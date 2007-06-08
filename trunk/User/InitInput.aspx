@@ -1,16 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/yxwz.master" AutoEventWireup="true" CodeFile="InitInput.aspx.cs" Inherits="User_InitInput" Title="Untitled Page" %>
+
+<%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
     <center >库存初始化录入<br /></center>
     <br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
         DefaultMode="Insert" OnItemInserted="FormView1_ItemInserted" OnItemInserting="FormView1_ItemInserting"
-        OnLoad="FormView1_Load" Width="256px">
+        OnLoad="FormView1_Load" Width="460px">
         <InsertItemTemplate>
-            <table>
+            <table border="1" >
                 <tr>
-                    <td style="height: 68px">
-                    </td>
-                    <td style="height: 68px">
+                    <td style="height: 68px; width: 85px;">
+                        供电所</td>
+                    <td style="height: 68px; width: 423px;">
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="users" DataTextField="UserName"
                             DataValueField="UserName" SelectedValue='<%# Bind("领取用户") %>'>
                         </asp:DropDownList>
@@ -21,20 +23,16 @@
                             Visible="False"></asp:Label></td>
                 </tr>
                 <tr>
-                    <td style="width: 148px">
-                        物资名称：</td>
-                    <td>
-                        <asp:DropDownList ID="DrpWZMC" runat="server" DataSourceID="WZ" DataTextField="名称"
-                            DataValueField="id" SelectedValue='<%# Bind("材料id") %>'>
-                        </asp:DropDownList>&nbsp;
-                        <asp:SqlDataSource ID="WZ" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-                            SelectCommand="SELECT id, 材料名称 + 型号 AS 名称 FROM 材料价格"></asp:SqlDataSource>
+                    <td style="width: 85px">
+                        材料名称</td>
+                    <td style="width: 423px">
+                        <uc1:WZSelect ID="WZSelect1" runat="server" 物资ID='<%# Bind("材料id") %>' />
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 148px">
+                    <td style="width: 85px">
                         数量</td>
-                    <td>
+                    <td style="width: 423px">
                         <asp:TextBox ID="TxtSL" runat="server" AutoCompleteType="Disabled" Text='<%# Bind("领取数量") %>'></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtSL"
                             Display="None" ErrorMessage="数字格式不正确" ValidationExpression="\d+"></asp:RegularExpressionValidator>

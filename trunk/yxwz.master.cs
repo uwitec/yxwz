@@ -15,6 +15,7 @@ public partial class yxwz : System.Web.UI.MasterPage
 	
     protected void Page_Load(object sender, EventArgs e)
     {
+        Page.MaintainScrollPositionOnPostBack = true;
 
     }
     protected void TreeView1_Load(object sender, EventArgs e)

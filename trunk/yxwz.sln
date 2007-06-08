@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\yxwz\", ".", "{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\新建文件夹\", ".", "{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.VirtualPath = "/yxwz"
 		Debug.AspNetCompiler.PhysicalPath = "V:\Users\y97523\Desktop\yxwz\"
@@ -20,12 +20,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\yxwz\", ".", "{B5EFA
 		VWDPort = "49356"
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "营销物资配送系统", "..\营销物资配送系统\营销物资配送系统.vdproj", "{FDCAEC1A-2974-41A4-9C8E-54607A9620BE}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -36,8 +30,6 @@ Global
 		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Debug|.NET.Build.0 = Debug|.NET
 		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Release|.NET.ActiveCfg = Debug|.NET
 		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Release|.NET.Build.0 = Debug|.NET
-		{FDCAEC1A-2974-41A4-9C8E-54607A9620BE}.Debug|.NET.ActiveCfg = Debug
-		{FDCAEC1A-2974-41A4-9C8E-54607A9620BE}.Release|.NET.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
