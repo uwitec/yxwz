@@ -23,18 +23,13 @@ public partial class Controls_UserSelect : System.Web.UI.UserControl
 
     protected override void OnInit(EventArgs e)
     {
+        if (!HttpContext.Current.User.IsInRole("营销部管理员"))
+            users.FilterExpression = "UserName = '" + Membership.GetUser().UserName + "'";
         if (!IsPostBack)
         {
             DropDownList1.DataBind();
         }
+
         base.OnInit(e);
-    }
-
-    protected void users_Load(object sender, EventArgs e)
-    {
-        if (!HttpContext.Current.User.IsInRole("营销部管理员"))
-            (sender as SqlDataSource).FilterExpression = "UserName = '" + Membership.GetUser().UserName + "'";
-
-
     }
 }
