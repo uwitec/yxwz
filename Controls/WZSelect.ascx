@@ -1,17 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WZSelect.ascx.cs" Inherits="Controls_WZSelect" %>
-名称：<asp:DropDownList ID="drpMC" runat="server" AutoPostBack="True" DataSourceID="dsMC"
-    DataTextField="材料名称" DataValueField="材料名称">
-</asp:DropDownList><br />
-型号：
-<asp:DropDownList ID="drpXH" runat="server" DataSourceID="dsXH" DataTextField="型号"
+筛选<asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True"></asp:TextBox><br />
+<asp:DropDownList ID="drpXH" runat="server" DataSourceID="dsXH" DataTextField="材料"
     DataValueField="id">
 </asp:DropDownList>
-<asp:SqlDataSource ID="dsMC" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-    SelectCommand="SELECT DISTINCT [材料名称] FROM [材料价格]"></asp:SqlDataSource>
+&nbsp;
 <asp:SqlDataSource ID="dsXH" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-    SelectCommand="SELECT [id], [型号] FROM [材料价格] WHERE ([材料名称] = @材料名称)">
+    SelectCommand="SELECT id, 材料名称 + ISNULL(型号, '') AS 材料 FROM 材料价格 WHERE (CHARINDEX(@keyword, 材料名称 + ISNULL(型号, '')) <> 0) ORDER BY 材料">
     <SelectParameters>
-        <asp:ControlParameter ControlID="drpMC" Name="材料名称" PropertyName="SelectedValue"
-            Type="String" />
+        <asp:ControlParameter ControlID="TextBox1" DefaultValue="''" Name="keyword" PropertyName="Text" />
     </SelectParameters>
 </asp:SqlDataSource>
