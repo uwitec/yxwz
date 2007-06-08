@@ -25,7 +25,7 @@ public partial class Controls_UserSelect : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
-            DataBind();
+            DropDownList1.DataBind();
         }
         base.OnInit(e);
     }

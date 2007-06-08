@@ -47,10 +47,10 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="cl" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:wzps %>"
-            DeleteCommand="DELETE FROM [材料价格] WHERE [id] = @original_id AND [材料名称] = @original_材料名称 AND [型号] = @original_型号 AND [价格] = @original_价格"
+            DeleteCommand="DELETE FROM [材料价格] WHERE [id] = @original_id"
             InsertCommand="INSERT INTO [材料价格] ([材料名称], [型号], [价格]) VALUES (@材料名称, @型号, @价格)"
             OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [材料价格] order by id desc"
-            UpdateCommand="UPDATE [材料价格] SET [材料名称] = @材料名称, [型号] = @型号, [价格] = @价格 WHERE [id] = @original_id AND [材料名称] = @original_材料名称 AND [型号] = @original_型号 AND [价格] = @original_价格">
+            UpdateCommand="UPDATE [材料价格] SET [材料名称] = @材料名称, [型号] = @型号, [价格] = @价格 WHERE [id] = @original_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_材料名称" Type="String" />
