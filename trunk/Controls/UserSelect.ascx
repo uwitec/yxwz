@@ -3,4 +3,4 @@
     DataValueField="UserName" >
 </asp:DropDownList>
 <asp:SqlDataSource ID="users" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>"
-    SelectCommand="SELECT  [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
+    SelectCommand="SELECT vw_aspnet_Users.UserName FROM vw_aspnet_Users INNER JOIN aspnet_UsersInRoles ON vw_aspnet_Users.UserId = aspnet_UsersInRoles.UserId INNER JOIN aspnet_Roles ON aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId WHERE (aspnet_Roles.RoleName = N'供电所')"></asp:SqlDataSource>
