@@ -14,6 +14,19 @@ public partial class Admin_AddJL : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //TxtSL回车时候移动到领用人
+        SetEnterOrder("TxtSL","TextBox1");
+
+        //领用人TextBox1回车时候插入记录
+        (FormView1.FindControl("TextBox1") as TextBox).Attributes.Add("onkeyDown",
+            "javascript:if(event.keyCode==13)" + FormView1.FindControl("InsertButton").ClientID + ".click();");
+
+    }
+
+    private void SetEnterOrder(string curControl,string nextControl)
+    {
+        (FormView1.FindControl(curControl) as TextBox).Attributes.Add("onkeyDown",
+            "javascript:if(event.keyCode==13)" + FormView1.FindControl(nextControl).ClientID + ".focus();");
     }
     protected void FormView1_Load(object sender, EventArgs e)
     {

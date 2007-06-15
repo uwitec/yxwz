@@ -13,6 +13,10 @@ public partial class User_InitInput : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //TxtSL回车时候插入记录
+        (FormView1.FindControl("TxtSL") as TextBox).Attributes.Add("onkeyDown",
+            "javascript:if(event.keyCode==13)" + FormView1.FindControl("InsertButton").ClientID + ".click();");
+
         if (!User.IsInRole("营销部管理员"))
             psjl.FilterExpression = "领取用户 = '" + Membership.GetUser().UserName + "'";
     }

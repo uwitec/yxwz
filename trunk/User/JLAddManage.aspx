@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JLAddManage.aspx.cs" Inherits="User_JLManage"  MasterPageFile="~/yxwz.master"%>
 
+<%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
+
 <asp:Content ContentPlaceHolderID="main" runat=server>
   <script language=javascript type="text/jscript">
     function confirmDel()
@@ -40,18 +42,15 @@
                 <asp:BoundField DataField="领取用户" HeaderText="领取用户" ReadOnly="True" SortExpression="领取用户" />
                 <asp:TemplateField HeaderText="材料id" SortExpression="材料id">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CL" DataTextField="材料"
-                            DataValueField="id" SelectedValue='<%# Bind("材料id") %>'>
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="CL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-                            SelectCommand="SELECT  [id],[材料名称] + [型号] as 材料 FROM [材料价格]"></asp:SqlDataSource>
+                        
+                            <uc1:WZSelect ID="WZSelect1" runat="server" 物资ID='<%# Bind("材料id") %>' />
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CL" DataTextField="材料"
                             DataValueField="id" Enabled="False" SelectedValue='<%# Bind("材料id") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="CL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
-                            SelectCommand="SELECT  [id],[材料名称] + [型号] as 材料 FROM [材料价格]"></asp:SqlDataSource>
+                            SelectCommand="SELECT  [id],材料名称 + ISNULL(型号, '') as 材料 FROM [材料价格]"></asp:SqlDataSource>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="领取数量" SortExpression="领取数量">
