@@ -13,7 +13,23 @@ public partial class User_JLDel : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //TxtSL回车时候移动到领用人
+        SetEnterOrder("TextBox1", "TextBox2");
+        SetEnterOrder("TextBox2", "TextBox3");
+        SetEnterOrder("TextBox3", "TextBox4");
+        SetEnterOrder("TextBox4", "TxtSL");
 
+        //领用人TextBox1回车时候插入记录
+        (FormView1.FindControl("TxtSL") as TextBox).Attributes.Add("onkeyDown",
+            "javascript:if(event.keyCode==13)" + FormView1.FindControl("InsertButton").ClientID + ".click();");
+
+    
+    }
+
+    private void SetEnterOrder(string curControl, string nextControl)
+    {
+        (FormView1.FindControl(curControl) as TextBox).Attributes.Add("onkeyDown",
+            "javascript:if(event.keyCode==13)" + FormView1.FindControl(nextControl).ClientID + ".focus();");
     }
     protected void FormView1_Load(object sender, EventArgs e)
     {
