@@ -70,8 +70,10 @@
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 时间, 领取用户, 材料id, 0 - 领取数量 AS 领取数量, 用途, 领用人, 发料人, 备注 FROM 领货记录 WHERE (0 - 领取数量 > 0) AND (时间 > @记录锁定时间) ORDER BY id DESC"
-            UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = 0 - @领取数量 WHERE [id] = @original_id">
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT 领货记录.id, 领货记录.时间, 领货记录.领取用户, 领货记录.材料id, 领货记录.领取时候单价, 领货记录.领取数量, 领货记录.用途, 领货记录.领用人, 领货记录.发料人, 领货记录.备注, 0 - 领货记录.领取数量 AS 领取数量 FROM 领货记录 INNER JOIN 材料价格 ON 领货记录.材料id = 材料价格.id WHERE (材料价格.材料类别ID = @系统类别id) AND (0 - 领货记录.领取数量 &gt; 0) AND (领货记录.时间 &gt; @记录锁定时间) ORDER BY 领货记录.id DESC"
+            
+            UpdateCommand="UPDATE [领货记录] SET [材料id] = @材料id, [领取数量] = 0 - @领取数量 WHERE [id] = @original_id" 
+            onselecting="JL_Selecting">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
             </DeleteParameters>
@@ -82,6 +84,8 @@
             </UpdateParameters>
             <SelectParameters>
                 <asp:Parameter Name="记录锁定时间" Type="DateTime" />
+                <asp:SessionParameter DbType="Int32" DefaultValue="0" Name="系统类别id" 
+                    SessionField="当前登录系统id" />
             </SelectParameters>
         </asp:SqlDataSource>
     

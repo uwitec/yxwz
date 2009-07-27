@@ -18,15 +18,19 @@ public partial class User_JLDelManage : System.Web.UI.Page
         {
             if (User.IsInRole("营销部管理员"))
             {
-                JL.SelectParameters.Clear();
-                JL.SelectParameters.Add("记录锁定时间", System.TypeCode.DateTime, "2000-1-1");
+                JL.SelectParameters["记录锁定时间"].DefaultValue = "2000-1-1";
             }
             else
             {
-                JL.SelectParameters.Clear();
-                JL.SelectParameters.Add("记录锁定时间", System.TypeCode.DateTime, WebConfigurationManager.AppSettings.Get("记录锁定时间"));
+                //JL.SelectParameters.Add("记录锁定时间", System.TypeCode.DateTime, WebConfigurationManager.AppSettings.Get("记录锁定时间"));
+                JL.SelectParameters["记录锁定时间"].DefaultValue = System.DateTime.Now.AddDays(-1).Date.ToString();
+                JL.FilterExpression = "领取用户 = '" + Membership.GetUser().UserName + "'";
             }
         }
+
+    }
+    protected void JL_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
 
     }
 }

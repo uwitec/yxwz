@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<VSPerformanceSession Version="1.00">
+  <Options>
+    <Solution>C:\Documents and Settings\Administrator\桌面\yxwz\yxwz.sln</Solution>
+    <CollectionMethod>Instrumentation</CollectionMethod>
+    <AllocationMethod>None</AllocationMethod>
+    <LaunchRuntimeControl>true</LaunchRuntimeControl>
+    <AddReport>true</AddReport>
+    <UniqueReport>Timestamp</UniqueReport>
+    <SamplingMethod>Cycles</SamplingMethod>
+    <CycleCount>10000000</CycleCount>
+    <PageFaultCount>10</PageFaultCount>
+    <SysCallCount>10</SysCallCount>
+    <SamplingCounter Name="" ReloadValue="00000000000f4240" DisplayName="" />
+    <RelocateBinaries>false</RelocateBinaries>
+    <HardwareCounters EnableHWCounters="false" />
+    <EtwSettings />
+    <PdhSettings>
+      <PdhCountersEnabled>false</PdhCountersEnabled>
+      <PdhCountersRate>500</PdhCountersRate>
+      <PdhCounters>
+        <PdhCounter>\Memory\Pages/sec</PdhCounter>
+        <PdhCounter>\PhysicalDisk(_Total)\Avg. Disk Queue Length</PdhCounter>
+        <PdhCounter>\Processor(_Total)\% Processor Time</PdhCounter>
+      </PdhCounters>
+    </PdhSettings>
+  </Options>
+  <ExcludeSmallFuncs>true</ExcludeSmallFuncs>
+  <PreinstrumentEvent>
+    <InstrEventExclude>false</InstrEventExclude>
+  </PreinstrumentEvent>
+  <PostinstrumentEvent>
+    <InstrEventExclude>false</InstrEventExclude>
+  </PostinstrumentEvent>
+  <Binaries>
+    <ProjBinary>
+      <Path>C:\Documents and Settings\Administrator\桌面\yxwz\</Path>
+      <ArgumentTimestamp>01/01/0001 00:00:00</ArgumentTimestamp>
+      <Instrument>true</Instrument>
+      <Sample>true</Sample>
+      <LaunchProject>true</LaunchProject>
+      <LaunchMethod>Browser</LaunchMethod>
+      <LaunchUrl>http://localhost:0/yxwz</LaunchUrl>
+      <SiteUrl>http://localhost:0/yxwz</SiteUrl>
+      <LocalPath>C:\Documents and Settings\Administrator\桌面\yxwz</LocalPath>
+      <VRoot>/yxwz</VRoot>
+      <NetAppHost>VWD</NetAppHost>
+      <NetBrowser>InternetExplorer</NetBrowser>
+      <ExcludeSmallFuncs>true</ExcludeSmallFuncs>
+      <PreinstrumentEvent>
+        <InstrEventExclude>false</InstrEventExclude>
+      </PreinstrumentEvent>
+      <PostinstrumentEvent>
+        <InstrEventExclude>false</InstrEventExclude>
+      </PostinstrumentEvent>
+      <ProjRef>{1C4A6848-B309-40B1-B9BF-03B90F7CDC83}|C:\Documents and Settings\Administrator\桌面\yxwz</ProjRef>
+      <ProjPath>C:\Documents and Settings\Administrator\桌面\yxwz\</ProjPath>
+      <ProjName>C:\...\yxwz\</ProjName>
+    </ProjBinary>
+  </Binaries>
+  <Reports>
+    <Report>
+      <Path>C:\Documents and Settings\Administrator\桌面\yxwz\yxwz090707.vsp</Path>
+    </Report>
+  </Reports>
+  <Launches>
+    <ProjBinary>
+      <Path>:PB:{1C4A6848-B309-40B1-B9BF-03B90F7CDC83}|C:\Documents and Settings\Administrator\桌面\yxwz</Path>
+    </ProjBinary>
+  </Launches>
+  <RuntimeMarks>
+    <MarkName>标记 1</MarkName>
+    <MarkName>标记 2</MarkName>
+    <MarkName>标记 3</MarkName>
+    <MarkName>标记 4</MarkName>
+    <MarkName>标记 5</MarkName>
+    <MarkName>标记 6</MarkName>
+    <MarkName>标记 7</MarkName>
+    <MarkName>标记 8</MarkName>
+    <MarkName>标记 9</MarkName>
+    <MarkName>标记 10</MarkName>
+  </RuntimeMarks>
+</VSPerformanceSession>

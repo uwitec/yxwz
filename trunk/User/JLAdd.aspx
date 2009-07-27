@@ -49,6 +49,13 @@
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("领用人") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
+                        <td style="width: 81px">
+                            备注:</td>
+                        <td style="width: 189px">
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("备注") %>'></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="2" style="text-align: center">
                             &nbsp;
                             &nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
@@ -65,13 +72,15 @@
         </asp:FormView>
         <asp:SqlDataSource ID="psjl" runat="server" ConflictDetection="CompareAllValues"
             ConnectionString="<%$ ConnectionStrings:wzps %>"
-            InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 领用人) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, @领用人 AS Expr1 FROM 材料价格 WHERE (id = @材料id)"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [领货记录]" OnInserting="psjl_Inserting">
+            InsertCommand="INSERT INTO 领货记录(领取用户, 领取数量, 材料id, 领取时候单价, 领用人,备注) SELECT @领取用户 AS 领取用户id, @领取数量 AS 领取数量, id, 价格, @领用人 as 领用人, @备注 as 备注  FROM 材料价格 WHERE (id = @材料id)"
+            OldValuesParameterFormatString="original_{0}" 
+            SelectCommand="SELECT * FROM [领货记录]" OnInserting="psjl_Inserting">
             <InsertParameters>
                 <asp:Parameter Name="领取用户" />
                 <asp:Parameter Name="领取数量" />
                 <asp:Parameter Name="领用人" />
                 <asp:Parameter Name="材料id" />
+                <asp:parameter Name="备注" />
             </InsertParameters>
         </asp:SqlDataSource>
         &nbsp; &nbsp;&nbsp;
