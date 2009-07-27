@@ -20,8 +20,16 @@ public partial class yxwz : System.Web.UI.MasterPage
     }
     protected void TreeView1_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            lbTitle.Text = (string)Session["当前登录系统"] + "管理系统";
+        }
+
         if (!Page.User.IsInRole("营销部管理员"))
+        {
+
             TreeView1.Nodes.RemoveAt(3);
+        }
 
         if (DateTime.Now > DateTime.Parse(WebConfigurationManager.AppSettings.Get("初始录入结束时间")))
         {

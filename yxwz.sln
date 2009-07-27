@@ -1,35 +1,33 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\新建文件夹\", ".", "{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "yxwz", "..\yxwz", "{C220B8CE-6DC1-4295-A3B1-417ED48E8922}"
 	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
 		Debug.AspNetCompiler.VirtualPath = "/yxwz"
-		Debug.AspNetCompiler.PhysicalPath = "V:\Users\y97523\Desktop\yxwz\"
+		Debug.AspNetCompiler.PhysicalPath = "C:\Documents and Settings\Administrator\桌面\yxwz\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\yxwz\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/yxwz"
-		Release.AspNetCompiler.PhysicalPath = "V:\Users\y97523\Desktop\yxwz\"
+		Release.AspNetCompiler.PhysicalPath = "C:\Documents and Settings\Administrator\桌面\yxwz\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\yxwz\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49356"
+		VWDPort = "1088"
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
-		Release|.NET = Release|.NET
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Debug|.NET.ActiveCfg = Debug|.NET
-		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Debug|.NET.Build.0 = Debug|.NET
-		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Release|.NET.ActiveCfg = Debug|.NET
-		{B5EFADB4-84E6-4291-9881-D2E4BCF365F6}.Release|.NET.Build.0 = Debug|.NET
+		{C220B8CE-6DC1-4295-A3B1-417ED48E8922}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C220B8CE-6DC1-4295-A3B1-417ED48E8922}.Debug|.NET.Build.0 = Debug|.NET
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,7 +20,7 @@
                             <table border="0" cellpadding="0">
                                 <tr>
                                     <td align="center" colspan="2">
-                                        用户登录<br />
+                                        营销物资配送系统<br />用户登录<br />
                                         <br />
                                         <br />
                                     </td>
@@ -42,7 +42,19 @@
                                         <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
                                             ErrorMessage="必须填写“密码”。" ToolTip="必须填写“密码”。" ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                     </td>
+                                    
                                 </tr>
+                                <tr>
+                                <td>
+                                        登录系统</td>
+                                    <td><asp:DropDownList ID="DrpSystem" runat="server" DataSourceID="SqlDataSource1" 
+                                            DataTextField="材料类别名称" DataValueField="材料类别id">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:wzps %>" 
+                                            SelectCommand="SELECT * FROM [材料类别]"></asp:SqlDataSource>
+                                   </td>
+                                    </tr>
                                 <tr>
                                     <td align="center" colspan="2" style="color: red">
                                         <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
@@ -50,7 +62,8 @@
                                 </tr>
                                 <tr>
                                     <td align="right" colspan="2">
-                                        <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="登录" ValidationGroup="Login1" />
+                                        <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="登录" 
+                                            ValidationGroup="Login1" onclick="LoginButton_Click" />
                                     </td>
                                 </tr>
                             </table>

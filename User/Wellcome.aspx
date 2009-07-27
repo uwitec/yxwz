@@ -8,7 +8,7 @@
     <table width="100%" border="0">
         <tr>
             <td colspan="3" style="height: 4px; text-align: center">
-                <span style="font-size: 24pt">欢迎使用营销物资配送系统</span><br />
+                <span style="font-size: 24pt">欢 迎 使 用</span><br />
             </td>
         </tr>
         <tr>
