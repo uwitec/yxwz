@@ -84,7 +84,7 @@
             </UpdateParameters>
             <SelectParameters>
                 <asp:Parameter Name="记录锁定时间" Type="DateTime" />
-                <asp:SessionParameter DbType="Int32" DefaultValue="0" Name="系统类别id" 
+                <asp:SessionParameter  DefaultValue="0" Name="系统类别id" 
                     SessionField="当前登录系统id" />
             </SelectParameters>
         </asp:SqlDataSource>
