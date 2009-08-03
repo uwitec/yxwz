@@ -1,6 +1,6 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="rpt_HZ.aspx.cs" Inherits="Admin_JLHZ"  MasterPageFile="~/yxwz.master"%>
 
-<%@ Register Assembly="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304"
+<%@ Register Assembly="CrystalDecisions.Web"
     Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 
 <%@ Register Src="../Controls/RptFilterBar.ascx" TagName="RptFilterBar" TagPrefix="uc2" %>
@@ -39,7 +39,8 @@
                     Type="String" />
                 <asp:ControlParameter ControlID="RptFilterBar1" Name="开始时间" PropertyName="StartTime"
                     Type="DateTime" />
-            </SelectParameters>
+                <asp:SessionParameter Name="材料类别" SessionField="当前登录系统id" Type="String" />
+                </SelectParameters>
         </asp:ObjectDataSource>
     </div>
 </asp:Content>

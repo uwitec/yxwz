@@ -30,6 +30,7 @@
                 Type="DateTime" />
             <asp:ControlParameter ControlID="RptFilterBar1" Name="结束时间" PropertyName="EndTime"
                 Type="DateTime" />
+            <asp:SessionParameter Name="材料类别" SessionField="当前登录系统id" Type="String" />
         </SelectParameters>
         <FilterParameters>
             <asp:QueryStringParameter Name="clID" QueryStringField="clID" />

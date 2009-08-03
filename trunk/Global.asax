@@ -6,7 +6,15 @@
     {
         // 在应用程序启动时运行的代码
 
-        BackupDB();
+        //string lastBackupTime = "数据库最后备份日期";
+        //Configuration cfg = WebConfigurationManager.OpenWebConfiguration("~");
+        //if (DateTime.Now.Date > DateTime.Parse(cfg.AppSettings.Settings[lastBackupTime].Value))
+        //{
+        //    BackupDB();
+        //    cfg.AppSettings.Settings[theKeyName].Value = DateTime.Now.Date().ToString();
+        //    cfg.Save();
+        //};
+       
     }
 
     private void BackupDB()
