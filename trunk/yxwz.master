@@ -47,8 +47,8 @@
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表" Expanded="True">
                                 <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/rpt/rpt_HZ.aspx"></asp:TreeNode>
-                                <asp:TreeNode Text="材料领取" Value="材料领取" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
-                                <asp:TreeNode NavigateUrl="~/rpt/rpt_SYJL.aspx" Text="材料使用" Value="材料使用"></asp:TreeNode>
+                                <asp:TreeNode Text="材料入库" Value="材料入库" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/rpt/rpt_SYJL.aspx" Text="材料出库" Value="材料出库"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="管理" Value="管理" Expanded="False">
                             <asp:TreeNode Text="物资品种" Value="物资品种" Expanded="True">
