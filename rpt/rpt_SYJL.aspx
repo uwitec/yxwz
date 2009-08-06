@@ -8,6 +8,8 @@
 <%@ Register Assembly="CrystalDecisions.Web"
     Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+ <div style="font-size:14px;">
+<br /><br />
     供电所材料使用报表<br />
     <br />
     <uc1:RptFilterBar ID="RptFilterBar1" runat="server" />
@@ -33,5 +35,6 @@
             <asp:SessionParameter Name="材料类别" SessionField="当前登录系统id" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    </div>
 </asp:Content>
 

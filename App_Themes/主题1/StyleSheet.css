@@ -1,2 +1,33 @@
-﻿body {
+﻿body
+{
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+td.loginTitle
+{
+	font-family: 黑体;
+	font-size: 40px;
+	color: #000080;
+}
+td.dash-line
+{
+	border: 1px dashed #FFFFFF;
+}
+.MainHeadTitle
+{
+	font-family: 黑体; font-size: 40px
+}
+img.logoPic
+{
+	background-image: url( 'stateGrid.jpg' );
+}
+td.topBackground
+{
+	background-image: url('/C:/Documents and Settings/Administrator/桌面/yxwz/App_Themes/主题1/lineTop.jpg');
+}
+table.workset
+{
+	border-style: dotted;
+	border-width: 0px 0px 2px 0px;
+	border-color: #99FFCC;
 }

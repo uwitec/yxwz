@@ -4,36 +4,38 @@
 
 <%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div style="text-align: center">
+    <div 
+        align="center" class="liteTitle">
         &nbsp; 供电所入库<br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
-            DefaultMode="Insert" Width="558px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
+            DefaultMode="Insert" Width="526px" OnLoad="FormView1_Load" 
+            OnItemInserting="FormView1_ItemInserting" 
+            OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>
-                <table border="1">
+                <table cellpadding="1" cellspacing="0" align="right" >
                     <tr>
-                        <td style="height: 68px; width: 81px;">
-                        </td>
-                        <td style="height: 68px; width: 189px;" >
-                            &nbsp; &nbsp;&nbsp;
-                            <br />
+                        <td style="height: 68px; width: 124px;" class="workset" height="30" 
+                            align="left">
+                            供电所:</td>
+                        <td style="height: 68px; width: 285px;" class="workset" >
                             <uc2:UserSelect ID="UserSelect1" runat="server" SelectedUser='<%# Bind("领取用户") %>' />
                             <asp:Label ID="lbContinue" runat="server" ForeColor="#00C000" Text="添加成功，继续输入下一条"
                                 Visible="False"></asp:Label></td>
                     </tr>
                     <tr>
-                        <td style="width: 81px">
+                        <td style="width: 124px" class="workset" height="30" align="left">
                             物资名称：</td>
-                        <td style="width: 189px">
+                        <td style="width: 285px">
                             <uc1:WZSelect ID="WZSelect1" runat="server" 物资ID='<%# Bind("材料id") %>' />
     
     </td>
                         
                     </tr>
                     <tr>
-                        <td style="width: 81px">
-                            数量</td>
-                        <td style="width: 189px">
+                        <td style="width: 124px" class="workset" height="30" align="left">
+                            数量:</td>
+                        <td style="width: 285px">
                             <asp:TextBox ID="TxtSL" runat="server" Text='<%# Bind("领取数量") %>' AutoCompleteType="Disabled"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtSL"
                                 ErrorMessage="数字格式不正确" ValidationExpression="-?\d+" Display="None"></asp:RegularExpressionValidator>
@@ -43,27 +45,27 @@
                         
                     </tr>
                     <tr>
-                        <td style="width: 81px">
+                        <td style="width: 124px" class="workset" height="30" align="left">
                             领用人：</td>
-                        <td style="width: 189px">
+                        <td style="width: 285px">
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("领用人") %>'></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td style="width: 81px">
+                        <td style="width: 124px" class="workset" height="30" align="left">
                             备注:</td>
-                        <td style="width: 189px">
+                        <td style="width: 285px">
                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("备注") %>'></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-align: center">
+                        <td colspan="2" style="text-align: center" align="center">
                             &nbsp;
                             &nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
                                 Text="保存"></asp:LinkButton>
                             &nbsp; &nbsp;
                             <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
                                 Text="取消"></asp:LinkButton>
-                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" Width="425px" />
                         </td>
                         
                     </tr>
