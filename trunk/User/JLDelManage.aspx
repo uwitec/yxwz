@@ -10,12 +10,14 @@
     }
 </script>
   
-    <div style="text-align: center">
+    <div style="text-align: center" class="liteTitle">
      <center>   材料使用记录<br /></center>
         <br />
         <a href="JLDel.aspx">添加</a><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id"
-            DataSourceID="JL" AllowPaging="True">
+            DataSourceID="JL" AllowPaging="True" BackColor="LightGoldenrodYellow" 
+            BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" 
+            GridLines="None">
             <Columns>
                 <asp:TemplateField ShowHeader="False">
                     <EditItemTemplate>
@@ -67,6 +69,12 @@
                 <asp:BoundField DataField="用途" HeaderText="用途" SortExpression="用途" />
                 <asp:BoundField DataField="备注" HeaderText="备注" SortExpression="备注" />
             </Columns>
+            <FooterStyle BackColor="Tan" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" 
+                HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
         </asp:GridView>
         <asp:SqlDataSource ID="JL" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [领货记录] WHERE [id] = @original_id"

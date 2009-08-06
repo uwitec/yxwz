@@ -9,7 +9,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div style="text-align: center">
+    <div style=" font-size: 14px;"><br /><br />
         »ã×Ü±¨±í<br />
         <br />
         <uc2:RptFilterBar ID="RptFilterBar1" runat="server" />

@@ -7,7 +7,9 @@
 
 <%@ Register Assembly="CrystalDecisions.Web"
     Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="main" Runat="Server" >
+    <div style="font-size:14px;">
+<br /><br />
     供电所材料领入报表<br />
     <br />
     <uc1:RptFilterBar ID="RptFilterBar1" runat="server" />
@@ -35,6 +37,6 @@
         <FilterParameters>
             <asp:QueryStringParameter Name="clID" QueryStringField="clID" />
         </FilterParameters>
-    </asp:ObjectDataSource>
+    </asp:ObjectDataSource></div>
 </asp:Content>
 

@@ -3,7 +3,7 @@
 
 <%@ Register Src="../Controls/WZSelect.ascx" TagName="WZSelect" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="main" runat="server">
-    <div style="text-align: center">
+    <div style="text-align: center" class="liteTitle">
         供电所材料使用<br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"

@@ -16,7 +16,7 @@ public partial class yxwz : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         Page.MaintainScrollPositionOnPostBack = true;
-
+        topTD.Style.Add("background-image", "url('" + ResolveUrl("~/App_Themes/主题1/lineTop.jpg") + "')");
     }
     protected void TreeView1_Load(object sender, EventArgs e)
     {
@@ -39,5 +39,9 @@ public partial class yxwz : System.Web.UI.MasterPage
         {
             TreeView1.Nodes.RemoveAt(1);
         }
+    }
+    protected void main_Init(object sender, EventArgs e)
+    {
+
     }
 }

@@ -4,39 +4,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>营销物资配送系统</title>
+    <link href="App_Themes/主题1/StyleSheet.css" />
     <style type="text/css">
+        .style1
+        {
+            height: 73px;
+        }
         .style2
         {
-            text-align: center;
-            height: 84px;
-            font-family: 黑体;
-            font-size: x-large;
+            height: 31px;
         }
+.workset
+{
+}
+
+.liteTitle
+{
+}
     </style>
 </head>
-<body>
+<body style="background-color:White;font-size:10px">
     <form id="form1" runat="server">
     <div>
         <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
             <tr>
-                <td colspan="2" class="style2">
-                    <asp:Label ID="lbTitle" runat="server" Text="lbTitle"></asp:Label>
+                <td colspan="2" class="style1" 
+                    
+                    
+                    style="background-image: url('/App_Themes/主题1/lineTop.jpg'); color: #000000; vertical-align: top;" 
+                    runat=server id="topTD" align="left" valign="middle">
+                    <table ><tr><td>
+                    <asp:Image ID="Image1" runat="server" Height="120px" 
+                        ImageUrl="~/App_Themes/主题1/stateGrid.jpg" /></td>
+                        <td style="font-family: 黑体; font-size: 40px; padding-bottom: 30px;" valign="bottom"
+                    ><asp:Label ID="lbTitle" runat="server" Text="配送物资管理系统"></asp:Label></td></tr></table>
                 </td>
             </tr>
             <tr>
-                <td colspan="2" style="height: 18px; text-align: right">
-                    <asp:LoginName ID="LoginName1" runat="server" ForeColor="#0000C0" FormatString="已登录为：{0}" />
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/login.aspx" />
+                <td colspan="2" 
+                    
+                    style="border-left: 0px solid #000000; border-right: 0px solid #000000; border-top: 1px solid #000000; border-bottom: 1px solid #000000; text-align: right; background-color: #9BEBFF; color: #212CD2; font-family: 宋体, Arial, Helvetica, sans-serif;" 
+                    class="style2">
+                    <asp:LoginName ID="LoginName1" runat="server" FormatString="已登录为：{0}" 
+                        Font-Bold="False" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" 
+                        LogoutPageUrl="~/login.aspx" Font-Bold="False" />
                     &nbsp;
                 </td>
             </tr>
             <tr>
                 <td style="width: 200px" valign="top">
-                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True"  OnLoad="TreeView1_Load" EnableViewState="False">
+                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" ImageSet="Contacts"  
+                        OnLoad="TreeView1_Load" EnableViewState="False" Font-Size="14px" 
+                        NodeIndent="10" Width="206px">
                         <ParentNodeStyle Font-Bold="False" />
-                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
-                            VerticalPadding="0px" />
+                        <HoverNodeStyle Font-Underline="False" />
+                        <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px"
+                            VerticalPadding="0px" BorderColor="Yellow" BorderStyle="Dashed" 
+                            BorderWidth="1px" />
                         <Nodes>
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入" NavigateUrl="~/User/InitInput.aspx"></asp:TreeNode>
                             <asp:TreeNode Text="当月物资使用" Value="当月物资使用" Expanded="True">
@@ -67,12 +92,12 @@
                                 <asp:TreeNode NavigateUrl="~/User/UserChangPassword.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
                             </asp:TreeNode>
                         </Nodes>
-                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                        <NodeStyle Font-Names="Verdana" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
                             NodeSpacing="0px" VerticalPadding="0px" />
                     </asp:TreeView>
                 </td>
                 <td>
-        <asp:contentplaceholder id="main" runat="server">
+        <asp:contentplaceholder id="main" runat="server" oninit="main_Init">
         </asp:contentplaceholder>
                 </td>
             </tr>
