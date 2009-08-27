@@ -23,7 +23,7 @@
 }
     </style>
 </head>
-<body style="background-color:White;font-size:10px">
+<body style="background-color:White;font-size:8px">
     <form id="form1" runat="server">
     <div>
         <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
@@ -34,16 +34,16 @@
                     style="background-image: url('/App_Themes/主题1/lineTop.jpg'); color: #000000; vertical-align: top;" 
                     runat=server id="topTD" align="left" valign="middle">
                     <table ><tr><td>
-                    <asp:Image ID="Image1" runat="server" Height="120px" 
+                    <asp:Image ID="Image1" runat="server" Height="75px" 
                         ImageUrl="~/App_Themes/主题1/stateGrid.jpg" /></td>
-                        <td style="font-family: 黑体; font-size: 40px; padding-bottom: 30px;" valign="bottom"
-                    ><asp:Label ID="lbTitle" runat="server" Text="配送物资管理系统"></asp:Label></td></tr></table>
+                        <td style="font-family: 黑体; font-size: 40px; padding-bottom: 25px;" valign="bottom"
+                    ><asp:Label ID="lbTitle" runat="server" Text="配送物资管理系统" Font-Size="30px"></asp:Label></td></tr></table>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" 
                     
-                    style="border-left: 0px solid #000000; border-right: 0px solid #000000; border-top: 1px solid #000000; border-bottom: 1px solid #000000; text-align: right; background-color: #9BEBFF; color: #212CD2; font-family: 宋体, Arial, Helvetica, sans-serif;" 
+                    style="border-left: 0px solid #000000; border-right: 0px solid #000000; border-top: 1px solid #000000; border-bottom: 1px solid #000000; text-align: right; background-color: #9BEBFF; color: #212CD2; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 13px;" 
                     class="style2">
                     <asp:LoginName ID="LoginName1" runat="server" FormatString="已登录为：{0}" 
                         Font-Bold="False" />
@@ -64,16 +64,16 @@
                             BorderWidth="1px" />
                         <Nodes>
                                 <asp:TreeNode Text="初始物资录入" Value="初始物资录入" NavigateUrl="~/User/InitInput.aspx"></asp:TreeNode>
-                            <asp:TreeNode Text="当月物资使用" Value="当月物资使用" Expanded="True">
-                                <asp:TreeNode Text="供电所入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
+                            <asp:TreeNode Text="供电所物资出入库管理" Value="当月物资使用" Expanded="True">
+                                <asp:TreeNode Text="供电所材料入库" Value="供电所入库" NavigateUrl="~/User/JLAdd.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLAddManage.aspx" Text="入库记录" Value="入库记录"></asp:TreeNode>
                                 <asp:TreeNode Text="供电所材料使用" Value="供电所材料使用" NavigateUrl="~/User/JLDel.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/User/JLDelManage.aspx" Text="使用记录" Value="使用记录"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="报表" Value="报表" Expanded="True">
-                                <asp:TreeNode Text="汇总报表" Value="汇总报表" NavigateUrl="~/rpt/rpt_HZ.aspx"></asp:TreeNode>
                                 <asp:TreeNode Text="材料入库" Value="材料入库" NavigateUrl="~/rpt/rpt_LQJL.aspx"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/rpt/rpt_SYJL.aspx" Text="材料出库" Value="材料出库"></asp:TreeNode>
+                            	<asp:TreeNode Text="出入库及库存汇总" Value="汇总报表" NavigateUrl="~/rpt/rpt_HZ.aspx"></asp:TreeNode>
                             </asp:TreeNode>
                             <asp:TreeNode Text="管理" Value="管理" Expanded="False">
                             <asp:TreeNode Text="物资品种" Value="物资品种" Expanded="True">

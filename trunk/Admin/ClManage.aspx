@@ -49,8 +49,12 @@
         <asp:SqlDataSource ID="cl" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [材料价格] WHERE [id] = @original_id"
             InsertCommand="INSERT INTO [材料价格] ([材料名称], [型号], [价格]) VALUES (@材料名称, @型号, @价格)"
-            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [材料价格] order by id desc"
+            OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, 材料名称, 型号, 单位, 价格, 备注, 材料类别ID FROM 材料价格 WHERE (材料类别ID = @材料类别ID) ORDER BY id DESC"
+            
             UpdateCommand="UPDATE [材料价格] SET [材料名称] = @材料名称, [型号] = @型号, [价格] = @价格 WHERE [id] = @original_id">
+            <SelectParameters>
+                <asp:SessionParameter Name="材料类别ID" SessionField="当前登录系统id" />
+            </SelectParameters>
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_材料名称" Type="String" />

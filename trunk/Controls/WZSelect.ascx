@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WZSelect.ascx.cs" Inherits="Controls_WZSelect" %>
-筛选<asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True"></asp:TextBox><br />
+筛选<asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True" Width="70px"></asp:TextBox><br />
 <asp:DropDownList ID="drpXH" runat="server" DataSourceID="dsXH" DataTextField="材料"
-    DataValueField="id">
+    DataValueField="id" Width="190px">
 </asp:DropDownList>
 &nbsp;<asp:SqlDataSource ID="dsXH" runat="server" ConnectionString="<%$ ConnectionStrings:wzps %>"
     
