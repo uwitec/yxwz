@@ -31,8 +31,9 @@
         </asp:DetailsView>
         <asp:SqlDataSource ID="cl" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:wzps %>"
             DeleteCommand="DELETE FROM [材料价格] WHERE [id] = @original_id AND [材料名称] = @original_材料名称 AND [型号] = @original_型号 AND [价格] = @original_价格"
-            InsertCommand="INSERT INTO [材料价格] ([材料名称], [型号], [价格]) VALUES (@材料名称, @型号, @价格)"
+            InsertCommand="INSERT INTO [材料价格] ([材料名称], [型号], [价格],[材料类别ID]) VALUES (@材料名称, @型号, @价格,@材料类别ID)"
             OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [材料价格]"
+            
             UpdateCommand="UPDATE [材料价格] SET [材料名称] = @材料名称, [型号] = @型号, [价格] = @价格 WHERE [id] = @original_id AND [材料名称] = @original_材料名称 AND [型号] = @original_型号 AND [价格] = @original_价格">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
@@ -52,7 +53,8 @@
             <InsertParameters>
                 <asp:Parameter Name="材料名称" Type="String" />
                 <asp:Parameter Name="型号" Type="String" />
-                <asp:Parameter Name="价格" Type="Decimal" />
+                <asp:Parameter Name="价格" Type="Decimal" DefaultValue=0 />
+                <asp:SessionParameter DefaultValue="" Name="材料类别ID" SessionField="当前登录系统id" />
             </InsertParameters>
         </asp:SqlDataSource>
     

@@ -35,8 +35,11 @@
                             <table border="0" cellpadding="0" align="right" style="width: 383px">
                                 <tr>
                                     <td align="center" colspan="2" height="80" 
-                                        style="font-family: 黑体; font-size: 30px; color: #000080;" valign="top">
-                                        营销物资配送系统</td>
+                                        style=" font-size: 30px; color: #000080;" valign="top">
+<B>
+                                        灌云农村供电所<br>
+					                    物资管理系统</td>
+</B>
                                 </tr>
                                 <tr>
                                     <td align="right" class="style2">

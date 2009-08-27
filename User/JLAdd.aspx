@@ -9,7 +9,7 @@
         &nbsp; 供电所入库<br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
-            DefaultMode="Insert" Width="526px" OnLoad="FormView1_Load" 
+            DefaultMode="Insert" OnLoad="FormView1_Load" 
             OnItemInserting="FormView1_ItemInserting" 
             OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>

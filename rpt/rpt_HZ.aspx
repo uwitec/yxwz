@@ -16,7 +16,9 @@
         &nbsp;<br />
         &nbsp;<CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True"
             DisplayGroupTree="False" Height="1039px" ReportSourceID="CrystalReportSourcehz"
-            Width="773px" HasCrystalLogo="False" HasDrillUpButton="False" HasGotoPageButton="False" HasToggleGroupTreeButton="False" HasViewList="False" />
+            Width="751px" HasCrystalLogo="False" HasDrillUpButton="False" 
+            HasGotoPageButton="False" HasToggleGroupTreeButton="False" 
+            HasViewList="False" />
         <CR:CrystalReportSource ID="CrystalReportSourcehz" runat="server">
             <Report FileName="..\rpt\hz.rpt">
                 <DataSources>

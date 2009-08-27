@@ -7,12 +7,14 @@
         供电所材料使用<br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="psjl"
-            DefaultMode="Insert" Width="546px" OnLoad="FormView1_Load" OnItemInserting="FormView1_ItemInserting" OnItemInserted="FormView1_ItemInserted">
+            DefaultMode="Insert" OnLoad="FormView1_Load" 
+            OnItemInserting="FormView1_ItemInserting" 
+            OnItemInserted="FormView1_ItemInserted">
             <InsertItemTemplate>
                 <table>
                     <tr>
                         <td style="height: 68px; width: 96px;">
-                        </td>
+                            供电所：</td>
                         <td style="height: 68px" >
                             &nbsp;
                             <uc2:UserSelect ID="UserSelect1" runat="server" SelectedUser='<%# Bind("领取用户") %>' />

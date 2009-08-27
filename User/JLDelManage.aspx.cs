@@ -33,4 +33,33 @@ public partial class User_JLDelManage : System.Web.UI.Page
     {
 
     }
+
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Response.Clear();
+        Response.Buffer = true;
+        Response.Charset = "GB2312";
+        Response.AppendHeader("Content-Disposition", "attachment;filename=DelRec.xls");
+        // 如果设置为 GetEncoding("GB2312");导出的文件将会出现乱码！！！
+        Response.ContentEncoding = System.Text.Encoding.UTF7;
+        Response.ContentType = "application/ms-excel";//设置输出文件类型为excel文件。 
+        System.IO.StringWriter oStringWriter = new System.IO.StringWriter();
+        System.Web.UI.HtmlTextWriter oHtmlTextWriter = new System.Web.UI.HtmlTextWriter(oStringWriter);
+
+        GridView1.AllowPaging = false;
+        DataBind();
+
+        GridView1.RenderControl(oHtmlTextWriter);
+        Response.Output.Write(oStringWriter.ToString());
+        Response.Flush();
+        Response.End();
+
+        GridView1.AllowPaging = true;
+        DataBind();
+    }
 }
